@@ -1,0 +1,26 @@
+default:
+  Title: '&c&lMOB ARENA'
+  List:
+  - '&c» &7Arena: &c%arena_name%'
+  - '&c» &7Current wave: &c%arena_wave_number%'
+  - '&c» &7Mobs Left: &c%arena_mobs%'
+  - '&c» &7Total Players: &c%arena_players%'
+  - '&c» &7Timeleft: &c%arena_timeleft%'
+  - '&c» &7Next wave in: &c%arena_wave_next_in% sec.'
+  - '&7           &e&lYOUR STATS         &7'
+  - '&e» &6Score: &e%player_score%'
+  - '&e» &6Kills: &e%player_kills%'
+  - '&e» &6Streak: &ex%player_streak% &7(%player_streak_decay% s.)'
+  - '&e» &6Balance: &e%player_balance%'
+  - '&7           &a&lTOP STATS         &7'
+  - '&a» &2%player_name%: &a%player_score% &7(%player_kills%)'
+  - '&r'
+
+custom_arena:
+  Title: '&d&lCUSTOM ARENA BOARD'
+  List:
+  - '&b» &3Current wave: &b%arena_wave_number%'
+  - '&b» &3Mobs Left: &b%arena_mobs%'
+  - '&b» &3Total Players: &b%arena_players%'
+  - '&b» &3Timeleft: &b%arena_timeleft%'
+  - '&b» &3Next wave in: &b%arena_wave_next_in% sec.'

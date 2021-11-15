@@ -1,0 +1,75 @@
+Name: §6Archer
+Default: false
+Permission_Required: false
+Cost: 0
+Icon:
+  material: BOW
+  amount: 1
+  durability: 0
+  name: '&e[&6Archer&e]'
+  lore:
+    - '&6▸ &7Damage:          &6■■■&8■■'
+    - '&6▸ &7Defense:        &6■&8■■■■'
+    - '&6▸ &7Effect(s):       &6Speed I'
+    - ''
+    - '&7Equipped with a bow enchanted on'
+    - '&6Power &7and &6Knockback &7to keep'
+    - '&7mobs away and kill them fast.'
+    - ''
+    - '&7Also has a wooden sword with &6Knockback'
+    - '&7and a few heal and speed potions.'
+  enchanted: false
+  item-flags:
+    - HIDE_ENCHANTS
+    - HIDE_ATTRIBUTES
+    - HIDE_UNBREAKABLE
+    - HIDE_DESTROYS
+    - HIDE_PLACED_ON
+    - HIDE_POTION_EFFECTS
+  unbreakable: false
+Content:
+  Commands: []
+  Armor:
+  - 5000080016ip002tmmirj5cdp62pjk79m6aobkd1in4nr2dtnn8so1002k6rrldpq022g00dq62po300348obdc5jma0000000k007chkn6s3cc5sgg0049pgmqp803tti4t35f1q24eh2oajjca21e9hmgpbi54gc59pn89nmut3j49ug0000
+  - 2g0004000j9cg01krb9dpim6sj1cpq3kr35c5q6gpbibtm6apr7d5n6eso1002k6rrldpq022g00dq62po300348obdc5jma0000000k007chkn6s3cc5sgg0049pgmqp803tti4t35f1q24eh2oajjca21e9hmgpbi54gc59pna1gmst3j49ug0000
+  - 5000080016ip003hmmirj5cdp62pjk79m6aobkd1in4nr3d1in6t3gdhgn8p81002k6rrldpq022g00dq62po300348obdc5jma0000000k007chkn6s3cc5sgg0049pgmqp803tti4t35f1q24eh2oajjca21e9hmgpbi54gc59pnahqmsqb349ug0000
+  - k00010004qb400c6qqbeclhn4ob6egt6opb1ehk6asivd1imorb5eg0g01a3dtqmst0118006t31cs1g01i4c5mm2pr50000000a003m8qbje1m62u880024sobdck01qup2ehingt1278hc59pm510n4or8clp2i862ksrk6obg49ug0000
+  Inventory:
+  - 5000080016ip001lmmirj5cdp62pjk79h6uto1002k6rrldpq022g00dq62po300348obdc5jma0000000k007chkn6s3cc5sgg0049pgmqp803lti4t35f1q24eh2oajjca21e9hmgpbi54gc59pn89nne8jt004g0325dphmgobeehmmarjkec5000000g1000rcepm001880016ip002hmmirj5cdp62pjk79qmsojiclgmmqbecs004003dhr6o00310004qb4007mqqbeclhn4ob6egt70rrnclp000g00dm7cr00044000j9cg014rb9dpim6sj1cpq3kqbecpkmsqbkf4004003dhr6o00210004qb4007mqqbeclhn4ob6egt70tbecdk00000
+  - k00010004qb400b6qqbeclhn4ob6egt7errfchimsnrjetnn4p01002k6rrldpq022g00dq62po300348obdc5jma0000000k007chkn6s3cc5sgg0049pgmqp803tti4t35f1q24eh2oajjca21e9hmgpbi54gc59pnadrmusj449ug02801h2msor8c5n78rb5dpq762g0000020g00dm7cr00084000j9cg016rb9dpim6sj1cpq3kqredthmmoj1cdlg0000
+  - 2g0004000j9cg01crb9dpim6sj1cpq3kprfdhi6arivc5o70r350400agrfeln78100
+  - 1800020009km800gdlkmspb3e9gmct1qe1nn8qbfdo0g01a3dtqmst0818006t31cs4001igdtq6irre00d6qqbeclhn4ob6egt76t3idtn6enrjetkmct3eclpn6000
+  - 5000080016ip0021mmirj5cdp62pjk79o6ut39dtn020058dnnarjk0g5000rkc5jgg006a1nn8qbfdo01srb9dpim6sj1cpq3kr3fdpjlupj9e9ilusj5edkn6t31dphma000
+  - k00010004qb40086qqbeclhn4ob6egt70rrkd5nms0800l1mutbeeg20k003ehgme2000p86ut39dtn0063dd5n6aoric5j78ejjehp6urj7btk6aobcd5n6e000
+  - a0000g002d5i005bdd5n6aoric5j78ej3dtnmmpb4bth6apb60400agrfeln78800
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - 1800020009km800fdlkmspb3e9gmct1qc5p74rrn0400agrfeln78g00
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  Potion_Effects:
+    SPEED: 1

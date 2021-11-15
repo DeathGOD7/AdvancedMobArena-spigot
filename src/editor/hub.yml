@@ -1,0 +1,47 @@
+Title: '&8&l「 &9AMA - Main Editor Menu &8&l」'
+Size: 45
+
+Content:
+  exit:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&cExit'
+    Slots: 40
+    Type: CLOSE
+
+Editor:
+  arena:
+    Display:
+      default:
+        Item:
+          material: SPAWNER
+          name: '&dArena Manager'
+          lore:
+          - '&6Left-Click: &eOpen'
+    Slots: 10
+    Type: EDITOR_ARENA
+
+  kits:
+    Display:
+      default:
+        Item:
+          material: GOLDEN_CHESTPLATE
+          name: '&eKit Manager'
+          lore:
+          - '&6Left-Click: &eOpen'
+          item-flags:
+          - '*'
+    Slots: 13
+    Type: EDITOR_KITS
+
+  mobs:
+    Display:
+      default:
+        Item:
+          material: CREEPER_SPAWN_EGG
+          name: '&aMobs Manager &7(Soon!)'
+          lore: []
+    Slots: 16
+    Type: EDITOR_MOBS

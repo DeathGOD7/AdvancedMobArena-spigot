@@ -1,0 +1,170 @@
+Title: '&8&l「 &9Arena Region Settings &8&l」'
+Size: 54
+
+Content:
+  return:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&c&lReturn &4✕'
+    Slots: 49
+    Type: RETURN
+
+Editor:
+  lock_triggers:
+    Display:
+      default:
+        Item:
+          material: CLOCK
+          name: '&eRegion Lock Triggers'
+          lore:
+            - '&bRegion will be locked (closed)'
+            - '&bfrom playing on the'
+            - '&bfollowing arena events:'
+            - '%region_triggers_locked%'
+            - '&7'
+            - '&dFor more details about the triggers,'
+            - '&dplease visit: &bhttp://nexwiki.info'
+            - '&7'
+            - '&6Left-Click: &eAdd Trigger'
+            - '&6Right-Click: &eRemove All'
+    Slots: 12
+    Type: REGION_CHANGE_TRIGGERS_LOCKED
+
+  unlock_triggers:
+    Display:
+      default:
+        Item:
+          material: CLOCK
+          name: '&eRegion Unlock Triggers'
+          lore:
+            - '&bRegion will be unlocked (opened)'
+            - '&bfor playing on the'
+            - '&bfollowing arena events:'
+            - '%region_triggers_unlocked%'
+            - '&7'
+            - '&dFor more details about the triggers,'
+            - '&dplease visit: &bhttp://nexwiki.info'
+            - '&7'
+            - '&6Left-Click: &eAdd Trigger'
+            - '&6Right-Click: &eRemove All'
+    Slots: 14
+    Type: REGION_CHANGE_TRIGGERS_UNLOCKED
+
+  active:
+    Display:
+      '0':
+        Item:
+          material: GRAY_DYE
+          name: '&8Inactive &7(Disabled)'
+          lore:
+          - '&7Region disabled by administrator.'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+      '1':
+        Item:
+          material: LIME_DYE
+          name: '&aActive &7(Enabled)'
+          lore:
+            - '&bRegion does not contains any problems'
+            - '&band is ready to play!'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+      '2':
+        Item:
+          material: PINK_DYE
+          name: '&cInactive &7(Error)'
+          lore:
+          - '&bRegion contains some problem(s) and'
+          - '&bcan not be enabled until it''s fixed:'
+          - '%problems%'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+    Slots: 4
+    Type: REGION_CHANGE_ACTIVE
+
+  name:
+    Display:
+      default:
+        Item:
+          material: NAME_TAG
+          name: '&eRegion Name'
+          lore:
+          - '&bCurrent: &a%region_name%'
+          - '&7'
+          - '&6Left-Click: &eChange'
+    Slots: 20
+    Type: REGION_CHANGE_NAME
+
+  setup-kit:
+    Display:
+      default:
+        Item:
+          material: GOLDEN_AXE
+          name: '&eRegion Setup Kit'
+          lore:
+          - '&bUse this kit to define main'
+          - '&bregion settings and locations.'
+          - '&7'
+          - '&6Left-Click: &eGet Kit'
+          item-flags:
+          - '*'
+    Slots: 24
+    Type: REGION_SETUP_KIT
+
+  waves:
+    Display:
+      default:
+        Item:
+          material: BLAZE_POWDER
+          name: '&eRegion Wave Manager'
+          lore:
+          - '&bDefine, which arena waves and'
+          - '&bwhen should be spawned in this'
+          - '&barena region.'
+          - '&7'
+          - '&6Left-Click: &eNavigate'
+    Slots: 30
+    Type: REGION_OPEN_WAVES
+
+  region-default:
+    Display:
+      '0':
+        Item:
+          material: PODZOL
+          name: '&8Region Default &7(No)'
+          lore:
+          - '&bRegion is &cnot default&b arena region.'
+          - '&7'
+          - '&7Default region defines the first'
+          - '&7spawn location when the game starts.'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+      '1':
+        Item:
+          material: GRASS_BLOCK
+          name: '&aRegion Default &7(Yes)'
+          lore:
+          - '&bRegion is &adefault&b arena region.'
+          - '&7'
+          - '&7Default region defines the first'
+          - '&7spawn location when the game starts.'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+    Slots: 22
+    Type: REGION_CHANGE_DEFAULT
+
+  containers:
+    Display:
+      default:
+        Item:
+          material: CHEST
+          name: '&eRegion Container Manager'
+          lore:
+            - '&bSet container items, change'
+            - '&brefill triggers and items amount here.'
+            - '&7'
+            - '&6Left-Click: &eNavigate'
+    Slots: 32
+    Type: REGION_OPEN_CONTAINERS

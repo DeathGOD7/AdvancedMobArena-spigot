@@ -1,0 +1,65 @@
+Title: '&8&l「 &9Arena Auto-Command Settings &8&l」'
+Size: 36
+
+Content:
+  return:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&c&lReturn &4✕'
+    Slots: 31
+    Type: RETURN
+
+Editor:
+  triggers:
+    Display:
+      default:
+        Item:
+          material: CLOCK
+          name: '&eGame Triggers'
+          lore:
+            - '&bThis command will be executed'
+            - '&bby/for target player(s) on the'
+            - '&bfollowing arena events:'
+            - '%arena_game_triggers%'
+            - '&7'
+            - '&dFor more details about the triggers,'
+            - '&dplease visit: &bhttp://nexwiki.info'
+            - '&7'
+            - '&6Left-Click: &eAdd Trigger'
+            - '&6Right-Click: &eRemove All'
+    Slots: 11
+    Type: GAME_COMMAND_CHANGE_TRIGGERS
+
+  target:
+    Display:
+      default:
+        Item:
+          material: ARMOR_STAND
+          name: '&eTarget Type'
+          lore:
+            - '&bCurrent: &a%game_command_target%'
+            - '&7'
+            - '&7Defines, which player(s) will obtain'
+            - '&7this reward during the game.'
+            - '&7'
+            - '&6Left-Click: &eChange'
+    Slots: 13
+    Type: GAME_COMMAND_CHANGE_TARGET_TYPE
+
+  commands:
+    Display:
+      default:
+        Item:
+          material: COMMAND_BLOCK
+          name: '&eCommands'
+          lore:
+            - '&bThe following commands will be'
+            - '&bexecuted when the "command" is ready:'
+            - '&a%game_command_commands%'
+            - '&7'
+            - '&6Left-Click: &eAdd Command'
+            - '&6Right-Click: &eClear'
+    Slots: 15
+    Type: GAME_COMMAND_CHANGE_COMMANDS

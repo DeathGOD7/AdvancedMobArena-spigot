@@ -1,0 +1,45 @@
+Title: '&8&l「 &9Wave Settings &8&l」'
+Size: 36
+
+Content:
+  return:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&c&lReturn &4✕'
+    Slots: 31
+    Type: RETURN
+
+Editor:
+  entity_limit:
+    Display:
+      default:
+        Item:
+          material: BAT_SPAWN_EGG
+          name: '&eWave Mobs'
+          lore:
+            - '&bCurrently contains mobs:'
+            - '%arena_wave_mobs%'
+            - '&7'
+            - '&7Define, which mobs will be'
+            - '&7spawned by this arena wave.'
+            - '&7'
+            - '&6Left-Click: &eNavigate'
+    Slots: 12
+    Type: WAVES_CHANGE_WAVE_MOBS
+
+  delay:
+    Display:
+      default:
+        Item:
+          material: EXPERIENCE_BOTTLE
+          name: '&eWave Amplificators'
+          lore:
+            - '&7Amplificators allows you to increase'
+            - '&7mob &eStrength&7 and &eAmount&7 during the game'
+            - '&7on certain &eConditions&7.'
+            - '&7'
+            - '&6Left-Click: &eNavigate'
+    Slots: 14
+    Type: WAVES_CHANGE_WAVE_AMPLIFICATORS

@@ -1,0 +1,52 @@
+Title: '&8&l「 &9Wave Amplificator Settings &8&l」'
+Size: 36
+
+Content:
+  return:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&c&lReturn &4✕'
+    Slots: 31
+    Type: RETURN
+
+Editor:
+  game_triggers:
+    Display:
+      default:
+        Item:
+          material: CLOCK
+          name: '&eGame Triggers'
+          lore:
+            - '&bAmplificator values will be applied'
+            - '&bto it corresponding wave on the'
+            - '&bfollowing arena events:'
+            - '%arena_game_triggers%'
+            - '&7'
+            - '&dFor more details about the triggers,'
+            - '&dplease visit: &bhttp://nexwiki.info'
+            - '&7'
+            - '&6Left-Click: &eAdd Trigger'
+            - '&6Right-Click: &eRemove All'
+    Slots: 12
+    Type: WAVES_CHANGE_WAVE_AMPLIFICATOR_TRIGGERS
+
+  values:
+    Display:
+      default:
+        Item:
+          material: COMPARATOR
+          name: '&eValues'
+          lore:
+            - '&bMob Amount: &a%wave_amplificator_value_amount%'
+            - '&bMob Level: &a%wave_amplificator_value_level%'
+            - '&7'
+            - '&7Here you can set values for amplificator.'
+            - '&7Negative values are allowed as well.'
+            - '&cValues have an incremental behavior!'
+            - '&7'
+            - '&6Left-Click: &eChange Amount'
+            - '&6Right-Click: &eChange Level'
+    Slots: 14
+    Type: WAVES_CHANGE_WAVE_AMPLIFICATOR_VALUES

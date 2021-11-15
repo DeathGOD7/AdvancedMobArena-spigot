@@ -1,0 +1,10 @@
+General:
+  Save_Purchased_Kits: true
+
+Sign_Format:
+  - '&8[&4Mob Arena&8]'
+  - '&bKit: &0%kit_name%'
+  - '&4Cost: &c%kit_cost%'
+  - '&e&lClick to Buy/Select'
+
+Signs: []

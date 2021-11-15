@@ -1,0 +1,113 @@
+REGION_CUBOID:
+  material: GOLDEN_AXE
+  name: '&6&nRegion Cuboid Selector'
+  lore:
+    - '&7Use this tool to define the arena region.'
+    - ''
+    - '&e▸ &6Left-Click: &eSet the 1st corner'
+    - '&e▸ &6Right-Click &eSet the 2nd corner'
+
+REGION_SPAWN:
+  material: FEATHER
+  name: '&b&nRegion Spawn Tool'
+  lore:
+    - '&7Use this tool to define the region spawn point.'
+    - ''
+    - '&3▸ &bRight-Click &3Set Spawn'
+
+REGION_SPAWNER:
+  material: BLAZE_ROD
+  name: '&e&nRegion Spawner Tool'
+  lore:
+    - '&7Use this tool to define mob spawn points.'
+    - ''
+    - '&6▸ &eLeft-Click &6Add Spawner'
+    - '&6▸ &eRight-Click &6Delete Spawner'
+
+REGION_CONTAINER:
+  material: CHEST
+  name: '&6&nContainer Tool'
+  lore:
+    - '&7Create and remove refillable chests.'
+    - ''
+    - '&6▸ &eLeft-Click: &6Remove/Break Container'
+    - '&6▸ &eRight-Click: &6Add/Manage Container'
+
+REGION_HOLOGRAM:
+  material: ARMOR_STAND
+  name: '&e&nHologram Tool'
+  lore:
+    - '&7Use this tool to create region state hologram.'
+    - ''
+    - '&6▸ &eLeft-Click: &6Enable/Disable Hologram'
+    - '&6▸ &eRight-Click: &6Set Hologram Location'
+
+REGION_SAVE:
+  material: EMERALD
+  name: '&a&nSave&7/&a&nExit Tool'
+  lore:
+    - '&7Use this tool to save changes.'
+    - ''
+    - '&2▸ &aRight-Click &2Save & Exit'
+
+SPOT_CUBOID:
+  material: GOLDEN_AXE
+  name: '&6&nSpot Cuboid Selector'
+  lore:
+    - '&7Use this tool to define the spot area.'
+    - '&7'
+    - '&e▸ &6Left-Click: &eSet 1st corner'
+    - '&e▸ &6Right-Click: &eSet 2nd corner'
+
+SPOT_STATE_PREVIEW:
+  material: ITEM_FRAME
+  name: '&6&nSpot State Preview'
+  lore:
+    - '&7Use this tool to preview the spot state.'
+    - '&7'
+    - '&e▸ &6Right-Click: &eState Preview'
+
+SPOT_STATE_EXIT:
+  material: BARRIER
+  name: '&c&nExit Tool'
+  lore:
+    - '&7Just exit the setup mode.'
+
+SPOT_SAVE:
+  material: EMERALD
+  name: '&a&nSpot Save Tool'
+  lore:
+    - '&7Use this tool to save the made changes.'
+    - '&7'
+    - '&2▸ &aRight-Click: &2Save Spot'
+
+ARENA_LOCATION_LOBBY:
+  material: MAGMA_CREAM
+  name: '&b&nArena Lobby Tool'
+  lore:
+    - '&7Use this tool to define the arena lobby location.'
+    - '&7'
+    - '&3▸ &bRight-Click &3Set Lobby'
+
+ARENA_LOCATION_LEAVE:
+  material: REDSTONE
+  name: '&c&nArena Leave Tool'
+  lore:
+    - '&7Use this tool to define the arena leave location.'
+    - '&7'
+    - '&4▸ &cLeft-Click &4Delete Location'
+    - '&4▸ &cRight-Click &4Set Location'
+
+ARENA_LOCATION_SPECTATE:
+  material: ENDER_EYE
+  name: '&a&nArena Spectate Tool'
+  lore:
+    - '&7Use this tool to define the arena spectate location.'
+    - '&7'
+    - '&2▸ &aRight-Click &2Set Location'
+
+ARENA_EXIT:
+  material: BARRIER
+  name: '&c&nExit Tool'
+  lore:
+    - '&7Just exit the setup mode.'

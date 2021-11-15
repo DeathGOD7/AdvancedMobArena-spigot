@@ -1,0 +1,82 @@
+Title: '&8&l「 &9Arena Region Wave Settings &8&l」'
+Size: 36
+
+Content:
+  return:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&c&lReturn &4✕'
+    Slots: 31
+    Type: RETURN
+
+Editor:
+  triggers:
+    Display:
+      default:
+        Item:
+          material: CLOCK
+          name: '&eGame Triggers'
+          lore:
+            - '&bWave will be spawned'
+            - '&binside the region on the'
+            - '&bfollowing arena events:'
+            - '%arena_game_triggers%'
+            - '&7'
+            - '&cFor now, only WAVE_START'
+            - '&ctype supported!'
+            - '&7'
+            - '&dFor more details about the triggers,'
+            - '&dplease visit: &bhttp://nexwiki.info'
+            - '&7'
+            - '&6Left-Click: &eAdd Trigger'
+            - '&6Right-Click: &eRemove All'
+    Slots: 13
+    Type: REGION_WAVE_CHANGE_TRIGGERS
+
+  wave_id:
+    Display:
+      default:
+        Item:
+          material: MAP
+          name: '&eArena Wave Ids'
+          lore:
+          - '&bCurrent: '
+          - '&a%region_wave_wave_ids%'
+          - '&7'
+          - '&7Here you should provide &cvalid identifier(s)&7'
+          - '&7of some of the arena waves.'
+          - '&8(The ones you made in Arena Wave Manager)'
+          - '&7'
+          - '&7It will spawn all the mobs from specified'
+          - '&7arena wave, and respect amplificator settings.'
+          - '&7'
+          - '&aIf you specified multiple wave ids, a random'
+          - '&aone will be choosed and spawned.'
+          - '&7'
+          - '&6Left-Click: &eAdd Wave Id'
+          - '&6Right-Click: &eClear List'
+    Slots: 10
+    Type: REGION_WAVE_CHANGE_ID
+
+  spawners:
+    Display:
+      default:
+        Item:
+          material: SPAWNER
+          name: '&eWave Spawners'
+          lore:
+          - '&bMobs from this wave will be spawned'
+          - '&bat the following region spawners:'
+          - '&a%region_wave_spawners%'
+          - '&7'
+          - '&7You can create and remove spawners'
+          - '&7in the region editor.'
+          - '&7'
+          - '&6Left-Click: &eAdd Spawner'
+          - '&6Right-Click: &eClear List'
+    Slots: 16
+    Type: REGION_WAVE_CHANGE_SPAWNERS
+
+

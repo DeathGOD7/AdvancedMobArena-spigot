@@ -1,0 +1,51 @@
+Title: '&8&l「 &9Arena Region Containers &8&l」'
+Size: 54
+
+Object:
+  Slots: 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26
+  Name: '&eContainer'
+  Lore:
+    - '&bLocation: &ax: %container_location_x%&7, &ay: %container_location_y%&7, &az: %container_location_z%&7 in &a%container_location_world%'
+    - '&7'
+    - '&6Left-Click: &eEdit'
+    - '&6Shift+Right: &eDelete &7(No Undo)'
+    - '&6Middle-Click: &eTeleport'
+
+Content:
+  page_next:
+    Display:
+      default:
+        Item:
+          material: ENDER_EYE
+          name: '&e&lNext Page →'
+    Slots: 44
+    Type: PAGE_NEXT
+  page_previous:
+    Display:
+      default:
+        Item:
+          material: ENDER_EYE
+          name: '&e&l← Previous Page'
+    Slots: 36
+    Type: PAGE_PREVIOUS
+  return:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&c&lReturn &4✕'
+    Slots: 39
+    Type: RETURN
+  create:
+    Display:
+      default:
+        Item:
+          material: ANVIL
+          name: '&a&lNew Container &7(Inactive)'
+          lore:
+            - '&bUse &aRegion Setup Kit &bto create'
+            - '&bnew containers.'
+    Slots: 41
+    Type: NONE
+
+Editor: {}

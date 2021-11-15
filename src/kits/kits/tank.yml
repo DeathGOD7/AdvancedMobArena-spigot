@@ -1,0 +1,76 @@
+Name: §bTank
+Default: true
+Permission_Required: false
+Cost: 0
+Icon:
+  material: DIAMOND_CHESTPLATE
+  amount: 1
+  durability: 0
+  name: '&3[&bTank&3]'
+  lore:
+    - '&b▸ &7Damage:          &b■&8■■■■'
+    - '&b▸ &7Defense:        &b■■■■■'
+    - '&b▸ &7Effect(s):     &bHealth III&7, &cSlow I'
+    - ''
+    - '&7Equipped with a diamond armor set'
+    - '&7enchanted on &bProtection III'
+    - '&7to absorb all the mob damage.'
+    - ''
+    - '&7Also has a wooden sword with no enchants'
+    - '&7and a bunch of heal potions.'
+  enchanted: false
+  item-flags:
+    - HIDE_ENCHANTS
+    - HIDE_ATTRIBUTES
+    - HIDE_UNBREAKABLE
+    - HIDE_DESTROYS
+    - HIDE_PLACED_ON
+    - HIDE_POTION_EFFECTS
+  unbreakable: false
+Content:
+  Commands: []
+  Armor:
+  - a0000g002d5i005rdd5n6aoric5j78ej4d5gmqrrechfm4rrfehpg20058dnnarjk045000rkc5jg60068hgmqob7ck0000001800ep39edo6oobp10008jj1dlig07br49q6au3k48t25gl7c8k58obedcki1gl76t16urrkech7q0090064arj3d1gmst3dcln78soa000000o2001motjc001gg002d5i0053dd5n6aoric5j78ejge9nn8pb3ehkmurg008006r3mdg00220009km800pdlkmspb3e9gmct1qcpkn4pave1p6ut35cdq6irre001000rcepm000880016ip0039mmirj5cdp62pjk79h6oobjehfn0sjfehim6t39dtn00000
+  - 2g0004000j9cg01krb9dpim6sj1cpq3kp39c5mmurj4btm6apr7d5n6eso1002k6rrldpq022g00dq62po300348obdc5jma0000000k007chkn6s3cc5sgg0049pgmqp8041ti4t35f1q24eh2oajm4a2kc5n6ma90oajjej35ctjmirj7ech7q0090064arj3d1gmst3dcln78soa000000o2001motjc001gg002d5i0053dd5n6aoric5j78ejge9nn8pb3ehkmurg008006r3mdg00220009km800pdlkmspb3e9gmct1qcpkn4pave1p6ut35cdq6irre001000rcepm000880016ip0039mmirj5cdp62pjk79h6oobjehfn0sjfehim6t39dtn00000
+  - a0000g002d5i0073dd5n6aoric5j78ej4d5gmqrrechfm6q35edq70r31ehig20058dnnarjk045000rkc5jg60068hgmqob7ck0000001800ep39edo6oobp10008jj1dlig08jr49q6au3k48t25gl7c8k58obedcki1gl76t1mgpbjeho6oobkckh7q0090064arj3d1gmst3dcln78soa000000o2001motjc001gg002d5i0053dd5n6aoric5j78ejge9nn8pb3ehkmurg008006r3mdg00220009km800pdlkmspb3e9gmct1qcpkn4pave1p6ut35cdq6irre001000rcepm000880016ip0039mmirj5cdp62pjk79h6oobjehfn0sjfehim6t39dtn00000
+  - k00010004qb400c6qqbeclhn4ob6egt68qb1dlnmsp2vd1imorb5eg0g01a3dtqmst0118006t31cs1g01i4c5mm2pr50000000a003m8qbje1m62u880024sobdck01sup2ehingt1278hc59r251a62rjb54gc59pn91imorb5egh7q0090064arj3d1gmst3dcln78soa000000o2001motjc001gg002d5i0053dd5n6aoric5j78ejge9nn8pb3ehkmurg008006r3mdg00220009km800pdlkmspb3e9gmct1qcpkn4pave1p6ut35cdq6irre001000rcepm000880016ip0039mmirj5cdp62pjk79h6oobjehfn0sjfehim6t39dtn00000
+  Inventory:
+  - k00010004qb400b6qqbeclhn4ob6egt7errfchimsnrjetnn4p01002k6rrldpq022g00dq62po300348obdc5jma0000000k007chkn6s3cc5sgg0049pgmqp804hti4t35f1q24eh2oajm4a2kc5n6ma90oajjelrfdti6arh0adrmusj449ug0000
+  - a0000g002d5i0043dd5n6aoric5j78ejgdtq6irre0400agrfeln782ga001n8ob71000ck3fehkmurg025mmirj5cdp62pjk79k6aobcd5n6e000
+  - a0000g002d5i005bdd5n6aoric5j78ej3dtnmmpb4bth6apb60400agrfeln78800
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  - k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+  Potion_Effects:
+    SLOW: 1
+    HEALTH_BOOST: 3

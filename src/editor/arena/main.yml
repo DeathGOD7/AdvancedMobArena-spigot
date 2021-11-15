@@ -1,0 +1,165 @@
+Title: '&8&l「 &9Arena Editor &8&l」'
+Size: 54
+
+Content:
+  return:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&c&lReturn &4✕'
+    Slots: 49
+    Type: RETURN
+
+Editor:
+  active_state:
+    Display:
+      '0':
+        Item:
+          material: GRAY_DYE
+          name: '&8Inactive &7(Disabled)'
+          lore:
+          - '&7Arena disabled by administrator.'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+      '1':
+        Item:
+          material: LIME_DYE
+          name: '&aActive &7(Enabled)'
+          lore:
+            - '&bArena does not contains any problems'
+            - '&band is ready to play!'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+      '2':
+        Item:
+          material: PINK_DYE
+          name: '&cInactive &7(Error)'
+          lore:
+          - '&bArena contains some problem(s) and'
+          - '&bcan not be enabled until it''s fixed:'
+          - '%problems%'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+    Slots: 4
+    Type: ARENA_CHANGE_ACTIVE
+
+  reqperm:
+    Display:
+      default:
+        Item:
+          material: REDSTONE_TORCH
+          name: '&ePermission Requirement'
+          lore:
+            - '&bRequired: &a%arena_requirement_permission%'
+            - '&bNode: &a%arena_permission%'
+            - '&7'
+            - '&6Left-Click: &eChange'
+    Slots: 2
+    Type: ARENA_CHANGE_REQUIREMENT_PERMISSION
+
+  reqmoney:
+    Display:
+      default:
+        Item:
+          material: GOLD_NUGGET
+          name: '&eMoney Requirement'
+          lore:
+            - '&bCurrent: &a%arena_requirement_money%'
+            - '&7'
+            - '&6Left-Click: &eChange'
+    Slots: 6
+    Type: ARENA_CHANGE_REQUIREMENT_MONEY
+
+  gameplay:
+    Display:
+      default:
+        Item:
+          material: EXPERIENCE_BOTTLE
+          name: '&aGameplay Manager'
+          lore:
+          - '%problems%'
+          - '&7'
+          - '&6Left-Click: &eOpen'
+    Slots: 20
+    Type: ARENA_OPEN_GAMEPLAY_MANAGER
+
+  waves:
+    Display:
+      default:
+        Item:
+          material: BLAZE_POWDER
+          name: '&eWaves Manager'
+          lore:
+          - '%problems%'
+          - '&7'
+          - '&6Left-Click: &eOpen'
+    Slots: 30
+    Type: ARENA_OPEN_WAVE_MANAGER
+
+  setup-kit:
+    Display:
+      default:
+        Item:
+          material: GOLDEN_AXE
+          name: '&6Arena Setup Kit'
+          lore:
+          - '&bUse this kit to define the arena locations.'
+          - '&7'
+          - '&6Left-Click: &eGet Kit'
+          item-flags:
+          - '*'
+    Slots: 22
+    Type: ARENA_SETUP_KIT
+
+  regions:
+    Display:
+      default:
+        Item:
+          material: COMPASS
+          name: '&bRegion Manager'
+          lore:
+          - '%problems%'
+          - '&7'
+          - '&6Left-Click: &eOpen'
+    Slots: 24
+    Type: ARENA_OPEN_REGION_MANAGER
+
+  shop:
+    Display:
+      default:
+        Item:
+          material: EMERALD
+          name: '&aShop Manager'
+          lore:
+          - '%problems%'
+          - '&7'
+          - '&6Left-Click: &eOpen'
+    Slots: 32
+    Type: ARENA_OPEN_SHOP_MANAGER
+
+  rewards:
+    Display:
+      default:
+        Item:
+          material: GOLD_INGOT
+          name: '&eReward Manager'
+          lore:
+            - '%problems%'
+            - '&7'
+            - '&6Left-Click: &eOpen'
+    Slots: 34
+    Type: ARENA_OPEN_REWARD_MANAGER
+
+  spots:
+    Display:
+      default:
+        Item:
+          material: REDSTONE
+          name: '&dSpot Manager'
+          lore:
+          - '%problems%'
+          - '&7'
+          - '&6Left-Click: &eOpen'
+    Slots: 28
+    Type: ARENA_OPEN_SPOT_MANAGER

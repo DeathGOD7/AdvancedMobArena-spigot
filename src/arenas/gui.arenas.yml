@@ -1,0 +1,45 @@
+Title: '&8&l「 &9Arena List &8&l」'
+Size: 36
+
+Content:
+  page_next:
+    Display:
+      default:
+        Item:
+          material: ENDER_EYE
+          name: '&e&lNext Page →'
+    Slots: 35
+    Type: PAGE_NEXT
+  page_previous:
+    Display:
+      default:
+        Item:
+          material: ENDER_EYE
+          name: '&e&l← Previous Page'
+    Slots: 27
+    Type: PAGE_PREVIOUS
+  return:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&c&lExit'
+    Slots: 31
+    Type: CLOSE
+
+Arenas:
+  sample:
+    Display:
+      default:
+        Item:
+          material: SPAWNER
+          name: '&bDefault Arena'
+          lore:
+            - '&6▸ &eState: &6%arena_state%'
+            - '&6▸ &ePlayers: &6%arena_players%&7/&6%arena_players_max%'
+            - ''
+            - '&c▸ &7Permission Required: &c%arena_requirement_permission%'
+            - '&c▸ &7Money Required: &c%arena_requirement_money%'
+            - ''
+            - '&a&nClick to join the arena!'
+    Slots: 10

@@ -1,0 +1,390 @@
+Title: 'Arena Gameplay Editor'
+Size: 54
+
+Content:
+  return:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&c&lReturn &4✕'
+    Slots: 49
+    Type: RETURN
+
+Editor:
+  timeleft:
+    Display:
+      default:
+        Item:
+          material: CLOCK
+          name: '&eArena Timeleft'
+          lore:
+          - '&bCurrent: &a%timeleft% min.'
+          - '&7'
+          - '&6Left-Click: &eChange'
+          - '&6Right-Click: &eDisable'
+    Slots: 10
+    Type: GAMEPLAY_CHANGE_TIMELEFT
+
+  lobby_time:
+    Display:
+      default:
+        Item:
+          material: REPEATER
+          name: '&eLobby Time'
+          lore:
+          - '&bCurrent: &a%lobby-time% sec.'
+          - '&7'
+          - '&7Defines the lobby time before'
+          - '&7the game starts.'
+          - '&7'
+          - '&6Left-Click: &eChange'
+    Slots: 11
+    Type: GAMEPLAY_CHANGE_LOBBY_TIME
+
+  announces:
+    Display:
+      default:
+        Item:
+          material: ENDER_EYE
+          name: '&eAnnounces'
+          lore:
+          - '&bEnabled: &a%announces-enabled%'
+          - '&7'
+          - '&7Enables/Disables arena start'
+          - '&7and end announces.'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+    Slots: 13
+    Type: GAMEPLAY_CHANGE_ANNOUNCES
+
+  scoreboard:
+    Display:
+      default:
+        Item:
+          material: MAP
+          name: '&eScoreboard'
+          lore:
+          - '&bEnabled: &a%scoreboard-enabled%'
+          - '&7'
+          - '&7Enables/Disables arena scoreboard.'
+          - '&c&lProtocolLib &r&cis required!'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+    Slots: 14
+    Type: GAMEPLAY_CHANGE_SCOREBOARD
+
+  shop:
+    Display:
+      default:
+        Item:
+          material: EMERALD
+          name: '&eShop'
+          lore:
+          - '&bEnabled: &a%shop-enabled%'
+          - '&7'
+          - '&7Enables/Disables arena shop.'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+    Slots: 15
+    Type: GAMEPLAY_CHANGE_SHOP
+
+  hunger:
+    Display:
+      default:
+        Item:
+          material: ROTTEN_FLESH
+          name: '&eHunger'
+          lore:
+          - '&bEnabled: &a%hunger-enabled%'
+          - '&7'
+          - '&7Enables/Disables saturation lose.'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+    Slots: 16
+    Type: GAMEPLAY_CHANGE_HUNGER
+
+  regeneration:
+    Display:
+      default:
+        Item:
+          material: GOLDEN_APPLE
+          name: '&eRegeneration'
+          lore:
+          - '&bEnabled: &a%regeneration-enabled%'
+          - '&7'
+          - '&7Enables/Disables natural regeneration.'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+    Slots: 19
+    Type: GAMEPLAY_CHANGE_REGENERATION
+
+  item_drop:
+    Display:
+      default:
+        Item:
+          material: CAULDRON
+          name: '&eItem Drop'
+          lore:
+          - '&bEnabled: &a%item-drop-enabled%'
+          - '&7'
+          - '&7Enables/Disables item drop.'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+    Slots: 20
+    Type: GAMEPLAY_CHANGE_ITEM_DROP
+
+  item_pickup:
+    Display:
+      default:
+        Item:
+          material: HOPPER
+          name: '&eItem Pickup'
+          lore:
+          - '&bEnabled: &a%item-pickup-enabled%'
+          - '&7'
+          - '&7Enables/Disables item pickup.'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+    Slots: 21
+    Type: GAMEPLAY_CHANGE_ITEM_PICKUP
+
+  item_durability:
+    Display:
+      default:
+        Item:
+          material: ANVIL
+          name: '&eItem Durability'
+          lore:
+          - '&bEnabled: &a%item-durability-enabled%'
+          - '&7'
+          - '&7Enables/Disables item durability.'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+    Slots: 22
+    Type: GAMEPLAY_CHANGE_ITEM_DURABILITY
+
+  allowed_spawn_reasons:
+    Display:
+      default:
+        Item:
+          material: SPAWNER
+          name: '&eAllowed Mob Spawn Reasons'
+          lore:
+          - '&bThe following spawn reasons will'
+          - '&bbe allowed to spawn non-arena mobs:'
+          - '&a%allowed_spawn_reasons%'
+          - '&7'
+          - '&7This could be useful when using'
+          - '&7some plugins that can spawn custom mobs.'
+          - '&7'
+          - '&6Left-Click: &eAdd Reason'
+          - '&6Right-Click: &eClear List'
+    Slots: 23
+    Type: GAMEPLAY_CHANGE_ALLOWED_SPAWN_REASONS
+
+  banned_items:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&eBanned Items'
+          lore:
+          - '&bThe following items are disallowed'
+          - '&bfrom usage on the arena:'
+          - '&a- %banned_items%'
+          - '&7'
+          - '&6Left-Click: &eAdd Material'
+          - '&6Right-Click: &eClear List'
+    Slots: 24
+    Type: GAMEPLAY_CHANGE_BANNED_ITEMS
+
+  slime_split:
+    Display:
+      default:
+        Item:
+          material: SLIME_BALL
+          name: '&eSlime Split'
+          lore:
+          - '&bEnabled: &a%slime-split-enabled%'
+          - '&7'
+          - '&7Enables/Disables slime split on death.'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+    Slots: 25
+    Type: GAMEPLAY_CHANGE_SLIME_SPLIT
+
+  mob_drop_exp:
+    Display:
+      default:
+        Item:
+          material: EXPERIENCE_BOTTLE
+          name: '&eMob Exp Drop'
+          lore:
+          - '&bEnabled: &a%mob-drop-exp-enabled%'
+          - '&7'
+          - '&7Enables/Disables mob exp drop.'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+    Slots: 28
+    Type: GAMEPLAY_CHANGE_MOB_DROP_EXP
+
+  mob_drop_items:
+    Display:
+      default:
+        Item:
+          material: GUNPOWDER
+          name: '&eMob Items Drop'
+          lore:
+          - '&bEnabled: &a%mob-drop-items-enabled%'
+          - '&7'
+          - '&7Enables/Disables mob items drop.'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+    Slots: 29
+    Type: GAMEPLAY_CHANGE_MOB_DROP_ITEMS
+
+  players:
+    Display:
+      default:
+        Item:
+          material: PLAYER_HEAD
+          name: '&ePlayer Options'
+          lore:
+          - '&bMin/Max Players: &a%players-min%/%players-max%'
+          - '&bLives: &a%players-lives%'
+          - '&bSave Exp: &a%players-save-exp%'
+          - '&bDrop Items On Death: &a%players_drop_items_on_death%'
+          - '&7'
+          - '&7Defines min. and max. players on arena.'
+          - '&7Defines how many times player can die'
+          - '&7before being kicked from the game.'
+          - '&7Defines if player exp should be stacked'
+          - '&7with their current exp.'
+          - '&7'
+          - '&6Left-Click: &eChange Min'
+          - '&6Right-Click: &eChange Max'
+          - '&6Shift-Left: &eChange Lives'
+          - '&6Shift-Right: &eToggle Items Drop'
+          - '&6Middle-Click: &eToggle Exp'
+          - ''
+    Slots: 30
+    Type: GAMEPLAY_CHANGE_PLAYERS
+
+  spectate:
+    Display:
+      default:
+        Item:
+          material: SKELETON_SKULL
+          name: '&eSpectate Options'
+          lore:
+          - '&bEnabled: &a%spectate-enabled%'
+          - '&bAfter Death: &a%spectate-after-death%'
+          - '&7'
+          - '&7Enables/Disables spectate feature.'
+          - '&7Enables/Disables auto-spectate after death.'
+          - '&7'
+          - '&6Left-Click: &eToggle Enabled'
+          - '&6Right-Click: &eToggle After Death'
+    Slots: 31
+    Type: GAMEPLAY_CHANGE_SPECTATE
+
+  commands:
+    Display:
+      default:
+        Item:
+          material: COMMAND_BLOCK
+          name: '&eCommands'
+          lore:
+          - '&bEnabled: &a%commands-enabled%'
+          - '&7'
+          - '&7Enables/Disables usage of non-arena commands.'
+          - '&7'
+          - '&bThe following commands will be'
+          - '&ballowed to execute on arena:'
+          - '&a- %commands-whitelist%'
+          - '&7'
+          - '&6Left-Click: &eToggle Enabled'
+          - '&6Shift-Left: &eAdd to Whitelist'
+          - '&6Shift-Right: &eClear Whitelist'
+    Slots: 32
+    Type: GAMEPLAY_CHANGE_COMMANDS
+
+  kits:
+    Display:
+      default:
+        Item:
+          material: DIAMOND_CHESTPLATE
+          name: '&eKit Options'
+          lore:
+          - '&bEnabled: &a%kits-enabled%'
+          - '&7'
+          - '&7Enables/Disables kits feature.'
+          - '&7When disabled, players will use their own items.'
+          - '&7'
+          - '&bThe following kits are allowed:'
+          - '&a- %kits-allowed%'
+          - '&7'
+          - '&7Defines list of kits that are allowed to'
+          - '&7use on this arena. Use &e* &7to include all kits.'
+          - '&7'
+          - '&bThe following kits has a limited usage:'
+          - '&a- %kits-limits-name%: &2x%kits-limits-amount%'
+          - '&7'
+          - '&7Defines the max. amount of players with that kit.'
+          - '&7'
+          - '&6Middle-Click: &eToggle Enabled'
+          - '&6Left-Click: &eAdd Allowed Kit'
+          - '&6Right-Click: &eClear Allowed List'
+          - '&6Shift-Left: &eAdd Kit Limit'
+          - '&6Shift-Right: &eClear Limit List'
+          item-flags:
+          - '*'
+    Slots: 33
+    Type: GAMEPLAY_CHANGE_KITS
+
+  compat_pets:
+    Display:
+      default:
+        Item:
+          material: DRAGON_HEAD
+          name: '&e[Compat] Pets'
+          lore:
+          - '&bEnabled: &a%compat-pets-enabled%'
+          - '&7'
+          - '&7Enables/Disables pets from plugins on the arena.'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+    Slots: 34
+    Type: GAMEPLAY_CHANGE_COMPAT_PETS
+
+  compat_mcmmo:
+    Display:
+      default:
+        Item:
+          material: DIAMOND_SWORD
+          name: '&e[Compat] mcMMO'
+          lore:
+          - '&bEnabled: &a%compat-mcmmo-enabled%'
+          - '&7'
+          - '&7Enables/Disables mcMMO skills on the arena.'
+          - '&7'
+          - '&6Left-Click: &eToggle'
+          item-flags:
+          - '*'
+    Slots: 37
+    Type: GAMEPLAY_CHANGE_COMPAT_MCMMO
+
+  auto_commands:
+    Display:
+      default:
+        Item:
+          material: DAYLIGHT_DETECTOR
+          name: '&eAuto Commands'
+          lore:
+          - '&bAllows you to execute commands'
+          - '&bon certain arena events.'
+          - '&7'
+          - '&6Left-Click: &eNavigate'
+    Slots: 12
+    Type: GAMEPLAY_CHANGE_AUTO_COMMANDS

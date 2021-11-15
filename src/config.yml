@@ -1,0 +1,146 @@
+core:
+  command-aliases: ama,advancedmobarena,ma,mobarena
+  lang: en
+  prefix: AdvancedMobArena
+
+data:
+  auto-save: 15
+  storage:
+    type: sqlite
+    username: none
+    password: none
+    host: none
+    database: none
+  purge:
+    enabled: false
+    days: 60
+
+Debug:
+  Mob_Spawning: false
+
+general:
+  disable-inventory-manager: false
+  vault-currency: false
+
+mobs:
+  money-table:
+    default: 1
+    creeper: 3
+    spider: 2
+  score-table:
+    default: 3
+    creeper: 4
+  kill-streak:
+    enabled: true
+    streak-decay: 10.0
+    streaks:
+      '1':
+        message: ''
+        extra-money: 0
+        extra-score: 0
+      '2':
+        message: '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 50; ~fadeOut: 10;}&c&lDouble Kill!'
+        extra-money: 0
+        extra-score: 0
+      '3':
+        message: '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 50; ~fadeOut: 10;}&c&lTriple Kill!'
+        extra-money: 0
+        extra-score: 0
+      '4':
+        message: '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 50; ~fadeOut: 10;}&b&lQuadra Kill!'
+        extra-money: 0
+        extra-score: 0
+      '5':
+        message: '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 50; ~fadeOut: 10;}&b&lPenta Kill! \n &d(+10 Coins)'
+        extra-money: 10
+        extra-score: 0
+      '10':
+        message: '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 50; ~fadeOut: 10;}&e&lx%streak% Kill! \n &a(+30 Score, Heal)'
+        extra-money: 0
+        extra-score: 30
+        commands:
+        - '[CONSOLE] heal %player%'
+      '15':
+        message: '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 50; ~fadeOut: 10;}&e&lx%streak% Kill! \n &a(+20 Coins)'
+        extra-money: 20
+        extra-score: 0
+      '20':
+        message: '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 50; ~fadeOut: 10;}&e&lx%streak% Kill! \n &a(x10 Coins)'
+        extra-money: 900%
+        extra-score: 0
+      '30':
+        message: '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 50; ~fadeOut: 10;}&e&lx%streak% Kill! \n &a(x10 Score)'
+        extra-money: 0
+        extra-score: 900%
+
+Chat:
+  Enabled: true
+  Ignore_Global_Chat: true
+  Format: '&7(&6%kit%&7) &a%player%: &f%message%'
+
+Sounds:
+  Lobby:
+    Time_Tick: BLOCK_NOTE_BLOCK_PLING
+  Game:
+    Start: BLOCK_PORTAL_TRAVEL
+    End: BLOCK_METAL_FALL
+
+Signs:
+  Join:
+    Format:
+      - '&8[&4Mob Arena&8]'
+      - '&a&l%arena_name%'
+      - '&0- &4%arena_state% &0-'
+      - '&b%arena_players%&0/&b%arena_players_max%'
+  Ready:
+    Format:
+      - '&8[&4Mob Arena&8]'
+      - '&a&lReady State'
+      - '&7'
+      - '&bClick to Ready!'
+
+Lobby:
+  Ready_State:
+    Drop_Timer_To: 15
+    Freeze_Dropped_Timer_When_Not_Ready: true
+  Items:
+    KIT_SHOP:
+      Enabled: true
+      Slot: 3
+      Item:
+        material: ENDER_CHEST
+        name: '&d&nKit Shop'
+        lore:
+          - '&7(Right click to open)'
+    KIT_SELECT:
+      Enabled: true
+      Slot: 5
+      Item:
+        material: CHEST
+        name: '&6&nKit Selector'
+        lore:
+          - '&7(Right click to open)'
+    EXIT:
+      Enabled: true
+      Slot: 8
+      Item:
+        material: REDSTONE
+        name: '&c&nLeave Arena'
+        lore:
+          - '&7(Right click to leave)'
+    STATS:
+      Enabled: true
+      Slot: 0
+      Item:
+        material: EMERALD
+        name: '&a&nStats'
+        lore:
+          - '&7(Right click to open)'
+    READY:
+      Enabled: true
+      Slot: 7
+      Item:
+        material: LIME_DYE
+        name: '&a&nReady State'
+        lore:
+          - '&7(Right click to change your state)'

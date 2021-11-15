@@ -1,0 +1,47 @@
+display-name: '&fCave Spider &7[&6Lv. &c%level%&7]'
+name-visible: false
+entity-type: CAVE_SPIDER
+boss: false
+
+level:
+  minimum: 1
+  maximum: 50
+
+settings:
+  baby: false
+  horse:
+    color: 'BROWN'
+    style: 'NONE'
+  creeper:
+    charged: false
+  slime:
+    size: 4
+  parrot:
+    variant: 'BLUE'
+  llama:
+    color: WHITE
+  sheep:
+    color: RED
+  rabbit:
+    type: 'WHITE'
+  cat:
+    type: BLACK_CAT
+  mushroom_cow:
+    variant: RED
+  wolf:
+    angry: false
+  villager:
+    profession: LIBRARIAN
+
+boss-bar:
+  enabled: false
+  title: '&c&l%name% &7&l- &f&l%hp%&7&l/&f&l%maxhp%'
+  style: SOLID
+  color: BLUE
+
+equipment: []
+
+attributes:
+  start: {}
+  per-level:
+    GENERIC_MAX_HEALTH: 0.35

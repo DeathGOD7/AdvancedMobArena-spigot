@@ -1,0 +1,166 @@
+Title: '&8&l「 &9Kit Editor &8&l」'
+Size: 54
+
+Content:
+  return:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&c&lReturn &4✕'
+    Slots: 49
+    Type: RETURN
+
+Editor:
+  name:
+    Display:
+      default:
+        Item:
+          material: NAME_TAG
+          name: '&eKit Name'
+          lore:
+            - '&bCurrent: &a%kit_name%'
+            - '&7'
+            - '&6Left-Click: &eChange'
+    Slots: 4
+    Type: KIT_CHANGE_NAME
+
+  kit-icon:
+    Display:
+      default:
+        Item:
+          material: ITEM_FRAME
+          name: '&eKit Icon'
+          lore:
+            - '&7Represents kit icon in'
+            - '&fKit Selector &7and &fKit Shop &7menus.'
+            - '&7'
+            - '&6Drag & Drop: &eReplace'
+            - '&6Middle-Click: &eGet'
+          item-flags:
+            - '*'
+    Slots: 22
+    Type: KIT_CHANGE_ICON
+
+  commands:
+    Display:
+      default:
+        Item:
+          material: COMMAND_BLOCK
+          name: '&eKit Commands'
+          lore:
+            - '&bThe following commands will be'
+            - '&bexecuted when kit is selected:'
+            - '&f- %kit_commands%'
+            - '&7'
+            - '&6Left-Click: &eAdd Command'
+            - '&6Right-Click: &eClear'
+    Slots: 10
+    Type: KIT_CHANGE_COMMANDS
+
+  potions:
+    Display:
+      default:
+        Item:
+          material: BREWING_STAND
+          name: '&eKit Potion Effects'
+          lore:
+            - '&bThe following su.nexmedia.engine.api.effects will be'
+            - '&bpermanently given to a player:'
+            - '&f- %kit_potion_effects%'
+            - '&7'
+            - '&6Left-Click: &eAdd Potion'
+            - '&6Right-Click: &eClear'
+    Slots: 19
+    Type: KIT_CHANGE_POTIONS
+
+  armor:
+    Display:
+      default:
+        Item:
+          material: ARMOR_STAND
+          name: '&eKit Armor'
+          lore:
+            - '&bThese items will be equipped to'
+            - '&bplayer armor slots.'
+            - '&8(Use ESC to Save and Return)'
+            - '&7'
+            - '&cPlease, follow the order:'
+            - '&4Boots &c→ &4Leggings &c→ &4Chestplate &c→ &4Helmet'
+            - '&7'
+            - '&6Left-Click: &eNavigate'
+          item-flags:
+            - '*'
+    Slots: 34
+    Type: KIT_CHANGE_ARMOR
+
+  inventory:
+    Display:
+      default:
+        Item:
+          material: CHEST
+          name: '&eKit Inventory'
+          lore:
+            - '&bThese items will be equipped to'
+            - '&bplayer inventory slots.'
+            - '&8(Use ESC to Save and Return)'
+            - '&7'
+            - '&6Left-Click: &eNavigate'
+    Slots: 28
+    Type: KIT_CHANGE_INVENTORY
+
+  permission:
+    Display:
+      default:
+        Item:
+          material: REDSTONE_TORCH
+          name: '&ePermission Requirement'
+          lore:
+            - '&bRequired: &a%kit_is_permission%'
+            - '&bNode: &a%kit_permission%'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+    Slots: 16
+    Type: KIT_CHANGE_PERMISSION
+
+  cost:
+    Display:
+      default:
+        Item:
+          material: GOLD_NUGGET
+          name: '&eKit Cost'
+          lore:
+            - '&bCurrent Cost: &a%kit_cost%'
+            - '&7'
+            - '&6Left-Click: &eChange'
+    Slots: 25
+    Type: KIT_CHANGE_COST
+
+  kit-default:
+    Display:
+      '0':
+        Item:
+          material: GRAY_DYE
+          name: '&eKit Default &7(No)'
+          lore:
+            - '&bThis kit is &cnot a default &bkit.'
+            - '&7'
+            - '&7Default kits are used to be force'
+            - '&7selected for players who didn''t select'
+            - '&7it manually in lobby.'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+      '1':
+        Item:
+          material: LIME_DYE
+          name: '&eKit Default &7(Yes)'
+          lore:
+            - '&bThis kit is &adefault &bkit.'
+            - '&7'
+            - '&7Default kits are used to be force'
+            - '&7selected for players who didn''t select'
+            - '&7it manually in lobby.'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+    slots: 43
+    type: KIT_CHANGE_DEFAULT

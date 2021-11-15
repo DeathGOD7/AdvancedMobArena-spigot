@@ -1,0 +1,85 @@
+Title: '&8&l「 &9Wave Manager Settings &8&l」'
+Size: 54
+
+Content:
+  return:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&c&lReturn &4✕'
+    Slots: 49
+    Type: RETURN
+
+Editor:
+  delay:
+    Display:
+      default:
+        Item:
+          material: CLOCK
+          name: '&eWave Delay'
+          lore:
+          - '&bFirst: &a%arena_waves_delay_first%'
+          - '&bDefault: &a%arena_waves_delay_default%'
+          - '&7'
+          - '&7Defines the delay before first'
+          - '&7and between next waves.'
+          - '&7'
+          - '&6Left-Click: &eChange First'
+          - '&6Right-Click: &eChange Default'
+    Slots: 33
+    Type: WAVES_CHANGE_DELAY
+
+  final_wave:
+    Display:
+      default:
+        Item:
+          material: IRON_DOOR
+          name: '&eFinal Wave'
+          lore:
+          - '&bCurrent: &a%arena_waves_final_wave%'
+          - '&7'
+          - '&7When final wave is completed,'
+          - '&7the game will be finished.'
+          - '&7'
+          - '&aWhen disabled, the game will have'
+          - '&ano final wave and will be unlimited.'
+          - '&7'
+          - '&6Left-Click: &eChange'
+          - '&6Right-Click: &eDisable'
+    Slots: 31
+    Type: WAVES_CHANGE_FINAL_WAVE
+
+  gradual_spawn:
+    Display:
+      default:
+        Item:
+          material: OAK_SAPLING
+          name: '&eGradual Mob Spawning'
+          lore:
+          - '&bAllows you to spawn arena mobs'
+          - '&bas a small groups within certain'
+          - '&binterval instead of all at once.'
+          - '&7'
+          - '&6Left-Click: &eNavigate'
+    Slots: 29
+    Type: WAVES_CHANGE_GRADUAL
+
+  waves:
+    Display:
+      default:
+        Item:
+          material: BLAZE_POWDER
+          name: '&eWaves'
+          lore:
+          - '&bCreate arena waves here.'
+          - '&bThese waves are used in arena'
+          - '&bregion waves.'
+          - '&7'
+          - '&aBasically, it''s a list of all waves'
+          - '&athat can be used on this arena in'
+          - '&adifferent arena regions.'
+          - '&7'
+          - '&6Left-Click: &eNavigate'
+    Slots: 13
+    Type: WAVES_CHANGE_WAVES

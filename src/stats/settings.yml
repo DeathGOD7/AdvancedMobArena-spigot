@@ -1,0 +1,10 @@
+Update_Interval: 600
+
+Sign_Format:
+  - '&8[&4%top_type%&8]'
+  - '&bTop #%top_position%'
+  - '&a%top_name%'
+  - '&e&n%top_score%'
+
+Holograms: {}
+Signs: []

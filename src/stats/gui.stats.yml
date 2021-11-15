@@ -1,0 +1,212 @@
+Title: '&8&l「 &9Arena Stats &8&l」'
+Size: 54
+
+Content:
+  exit:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&c&lClose'
+    Slots: 49
+    Type: CLOSE
+
+Stat_Icons:
+  MOB_KILLS:
+    Display:
+      default:
+        Item:
+          material: IRON_SWORD
+          name: '&aMob Kills'
+          lore:
+            - '&7Amount of killed mobs.'
+            - ''
+            - '&a▸ &7%arena_name%: &a%score%'
+            - ''
+            - '&a&lTOTAL: &2&l%total%'
+          item-flags:
+            - '*'
+    Slots: 0
+    Type: MOB_KILLS
+
+  GAMES_WON:
+    Display:
+      default:
+        Item:
+          material: EMERALD
+          name: '&aGames Won'
+          lore:
+            - '&7Amount of finished games.'
+            - ''
+            - '&a▸ &7%arena_name%: &a%score%'
+            - ''
+            - '&a&lTOTAL: &2&l%total%'
+    Slots: 1
+    Type: GAMES_WON
+
+  GAMES_LOST:
+    Display:
+      default:
+        Item:
+          material: REDSTONE
+          name: '&cGames Lost'
+          lore:
+            - '&7Amount of unfinished games.'
+            - ''
+            - '&c▸ &7%arena_name%: &c%score%'
+            - ''
+            - '&c&lTOTAL: &4&l%total%'
+    Slots: 2
+    Type: GAMES_LOST
+
+  GAMES_PLAYED:
+    Display:
+      default:
+        Item:
+          material: MAP
+          name: '&eGames Played'
+          lore:
+            - '&7Amount of played games.'
+            - ''
+            - '&e▸ &7%arena_name%: &e%score%'
+            - ''
+            - '&e&lTOTAL: &6&l%total%'
+    Slots: 3
+    Type: GAMES_PLAYED
+
+  DEATHS:
+    Display:
+      default:
+        Item:
+          material: ROTTEN_FLESH
+          name: '&6Deaths'
+          lore:
+            - '&7Amount of deaths.'
+            - ''
+            - '&6▸ &7%arena_name%: &6%score%'
+            - ''
+            - '&6&lTOTAL: &f&l%total%'
+    Slots: 4
+    Type: DEATHS
+
+  COINS_SPENT:
+    Display:
+      default:
+        Item:
+          material: GOLD_NUGGET
+          name: '&eCoins Spent'
+          lore:
+            - '&7Amount of spent coins.'
+            - ''
+            - '&e▸ &7%arena_name%: &e%score%'
+            - ''
+            - '&e&lTOTAL: &6&l%total%'
+    Slots: 5
+    Type: COINS_SPENT
+
+  TNT_EXPLODED:
+    Display:
+      default:
+        Item:
+          material: TNT
+          name: '&cTNT Exploded'
+          lore:
+            - '&7Amount of exploded TNT.'
+            - ''
+            - '&c▸ &7%arena_name%: &c%score%'
+            - ''
+            - '&c&lTOTAL: &4&l%total%'
+    Slots: 6
+    Type: TNT_EXPLODED
+
+  ARROWS_LAUNCHED:
+    Display:
+      default:
+        Item:
+          material: ARROW
+          name: '&r&fArrows Launched'
+          lore:
+            - '&7Amount of launched arrows.'
+            - ''
+            - '&f▸ &7%arena_name%: &f%score%'
+            - ''
+            - '&f&lTOTAL: &7&l%total%'
+    Slots: 7
+    Type: ARROWS_LAUNCHED
+
+  POTIONS_DRUNK:
+    Display:
+      default:
+        Item:
+          material: POTION
+          name: '&9Potions Drunk'
+          lore:
+            - '&7Amount of drunk potions.'
+            - ''
+            - '&9▸ &7%arena_name%: &9%score%'
+            - ''
+            - '&9&lTOTAL: &f&l%total%'
+    Slots: 8
+    Type: POTIONS_DRUNK
+
+  FOOD_EATEN:
+    Display:
+      default:
+        Item:
+          material: 'APPLE'
+          name: '&cFood Eaten'
+          lore:
+            - '&7Amount of eaten food.'
+            - ''
+            - '&c▸ &7%arena_name%: &c%score%'
+            - ''
+            - '&c&lTOTAL: &4&l%total%'
+    Slots: 9
+    Type: FOOD_EATEN
+
+  EQUIPMENT_BROKEN:
+    Display:
+      default:
+        Item:
+          material: DAMAGED_ANVIL
+          name: '&6Equipment Broken'
+          lore:
+            - '&7Amount of broken equipment.'
+            - ''
+            - '&6▸ &7%arena_name%: &6%score%'
+            - ''
+            - '&6&lTOTAL: &e&l%total%'
+    Slots: 10
+    Type: EQUIPMENT_BROKEN
+
+  WAVES_PASSED:
+    Display:
+      default:
+        Item:
+          material: BLAZE_POWDER
+          name: '&6Waves Passed'
+          lore:
+            - '&7Amount of passed waves.'
+            - '&8(Highest result displayed)'
+            - ''
+            - '&e▸ &7%arena_name%: &e%score%'
+            - ''
+            - '&e&lTOTAL: &6&l%total%'
+    Slots: 11
+    Type: WAVES_PASSED
+
+  BEST_KILL_STREAK:
+    Display:
+      default:
+        Item:
+          material: LEAD
+          name: '&6Best Kill Streak'
+          lore:
+            - '&7Amount of passed waves.'
+            - '&8(Highest result displayed)'
+            - ''
+            - '&e▸ &7%arena_name%: &e%score%'
+            - ''
+            - '&e&lTOTAL: &6&l%total%'
+    Slots: 12
+    Type: BEST_KILL_STREAK

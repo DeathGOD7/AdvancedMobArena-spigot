@@ -1,0 +1,86 @@
+Title: '&8&l「 &9Arena Spot Settings &8&l」'
+Size: 45
+
+Content:
+  return:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&c&lReturn &4✕'
+    Slots: 40
+    Type: RETURN
+
+Editor:
+  active:
+    Display:
+      '0':
+        Item:
+          material: GRAY_DYE
+          name: '&8Inactive &7(Disabled)'
+          lore:
+            - '&7Spot disabled by administrator.'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+      '1':
+        Item:
+          material: LIME_DYE
+          name: '&aActive &7(Enabled)'
+          lore:
+            - '&7Spot enabled and is ready to use.'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+      '2':
+        Item:
+          material: PINK_DYE
+          name: '&cInactive &7(Error)'
+          lore:
+            - '&7Spot disabled due to error(s):'
+            - '%problems%'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+    Slots: 4
+    Type: SPOT_CHANGE_ACTIVE
+  
+  name:
+    Display:
+      default:
+        Item:
+          material: NAME_TAG
+          name: '&eSpot Name'
+          lore:
+          - '&bCurrent: &a%spot_name%'
+          - '&7'
+          - '&6Left-Click: &eChange'
+    Slots: 20
+    Type: SPOT_CHANGE_NAME
+
+  kit:
+    Display:
+      default:
+        Item:
+          material: GOLDEN_AXE
+          name: '&eSpot Cuboid Tool'
+          lore:
+          - '&bUse this to define spot cuboid.'
+          - '&7'
+          - '&6Left-Click: &eGet Tool'
+          item-flags:
+          - '*'
+    Slots: 22
+    Type: SPOT_SETUP_KIT
+
+  states:
+    Display:
+      default:
+        Item:
+          material: ITEM_FRAME
+          name: '&eSpot States'
+          lore:
+          - '&bCreate/Build different spot states here.'
+          - '&7'
+          - '&6Left-Click: &eNavigate'
+    Slots: 24
+    Type: SPOT_CHANGE_STATES
+
+

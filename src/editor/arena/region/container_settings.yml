@@ -1,0 +1,71 @@
+Title: '&8&l「 &9Arena Region Container Settings &8&l」'
+Size: 36
+
+Content:
+  return:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&c&lReturn &4✕'
+    Slots: 31
+    Type: RETURN
+
+Editor:
+  rf_triggers:
+    Display:
+      default:
+        Item:
+          material: CLOCK
+          name: '&eRefill Game Triggers'
+          lore:
+            - '&bContent of the container'
+            - '&bchest will be regenerated on the'
+            - '&bfollowing arena events:'
+            - '%arena_game_triggers%'
+            - '&7'
+            - '&dFor more details about the triggers,'
+            - '&dplease visit: &bhttp://nexwiki.info'
+            - '&7'
+            - '&6Left-Click: &eAdd Trigger'
+            - '&6Right-Click: &eRemove All'
+    Slots: 13
+    Type: REGION_CHANGE_CONTAINER_REFILL_TRIGGERS
+
+  rf_amount:
+    Display:
+      default:
+        Item:
+          material: COMPARATOR
+          name: '&eRefill Items Amount'
+          lore:
+            - '&bMin: &a%container_refill_items_min%'
+            - '&bMax: &a%container_refill_items_max%'
+            - '&7'
+            - '&7Defines how many items of total'
+            - '&7container content will be generated.'
+            - '&7'
+            - '&6Left-Click: &eChange Min'
+            - '&6Right-Click: &eChange Max'
+    Slots: 10
+    Type: REGION_CHANGE_CONTAINER_REFILL_AMOUNT
+
+  rf_items:
+    Display:
+      default:
+        Item:
+          material: CHEST
+          name: '&eContent'
+          lore:
+            - '&bHere you can add items that will'
+            - '&bbe generated inside the container chest.'
+            - '&7'
+            - '&aSimply put/take items in/from the chest'
+            - '&athat will be opened, then use ESC'
+            - '&ato return back to here.'
+            - '&7'
+            - '&6Left-Click: &eNavigate'
+    Slots: 16
+    Type: REGION_CHANGE_CONTAINER_ITEMS
+
+

@@ -1,0 +1,113 @@
+Title: '&8&l「 &9Wave Gradual Spawn Settings &8&l」'
+Size: 36
+
+Content:
+  return:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&c&lReturn &4✕'
+    Slots: 31
+    Type: RETURN
+
+Editor:
+  toggler:
+    Display:
+      '0':
+        Item:
+          material: GRAY_DYE
+          name: '&eGradual Spawning &7(Disabled)'
+          lore:
+            - '&bCurrent: &a%arena_waves_gradual_enabled%'
+            - '&7'
+            - '&7Enables/Disables gradual spawning.'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+      '1':
+        Item:
+          material: LIME_DYE
+          name: '&eGradual Spawning &7(Enabled)'
+          lore:
+            - '&bCurrent: &a%arena_waves_gradual_enabled%'
+            - '&7'
+            - '&7Enables/Disables gradual spawning.'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+    Slots: 4
+    Type: WAVES_CHANGE_GRADUAL_ENABLED
+
+  first_percent:
+    Display:
+      default:
+        Item:
+          material: MELON_SEEDS
+          name: '&eFirst Spawn Percent'
+          lore:
+            - '&bCurrent: &a%arena_waves_gradual_first_percent%%'
+            - '&7'
+            - '&7Defines how many mobs &8(in percent)'
+            - '&7of total &8(planned to spawn)&7 mobs amount'
+            - '&7will be spawned at the start of a wave.'
+            - '&7'
+            - '&6Left-Click: &eChange'
+    Slots: 10
+    Type: WAVES_CHANGE_GRADUAL_FIRST_PERCENT
+
+  next_percent:
+    Display:
+      default:
+        Item:
+          material: PUMPKIN_SEEDS
+          name: '&eNext Spawn Percent'
+          lore:
+            - '&bCurrent: &a%arena_waves_gradual_next_percent%%'
+            - '&7'
+            - '&7Defines how many mobs &8(in percent)'
+            - '&7of total &8(planned to spawn)&7 mobs amount'
+            - '&7will be spawned next times until all mobs are spawned.'
+            - '&7'
+            - '&cCan not be greater than &4First Spawn Percent&c value.'
+            - '&7'
+            - '&6Left-Click: &eChange'
+    Slots: 12
+    Type: WAVES_CHANGE_GRADUAL_NEXT_PERCENT
+
+  next_interval:
+    Display:
+      default:
+        Item:
+          material: CLOCK
+          name: '&eNext Spawn Interval'
+          lore:
+            - '&bCurrent: &a%arena_waves_gradual_next_interval%'
+            - '&7'
+            - '&7Defines how often &8(in seconds) new'
+            - '&7mob group should be spawned &8(if there is any)&7.'
+            - '&7'
+            - '&6Left-Click: &eChange'
+    Slots: 14
+    Type: WAVES_CHANGE_GRADUAL_NEXT_INTERVAL
+
+  next_kill_percent:
+    Display:
+      default:
+        Item:
+          material: ROTTEN_FLESH
+          name: '&eNext Spawn for Killed Percent'
+          lore:
+            - '&bCurrent: &a%arena_waves_gradual_next_kill_percent%%'
+            - '&7'
+            - '&7Defines how many mobs &8(in percent)'
+            - '&7of total &8(planned to spawn)&7 mobs amount'
+            - '&7should be killed before new mob group'
+            - '&7will be prepared to spawn.'
+            - '&7'
+            - '&aYou can set this to zero to make new mob groups'
+            - '&aspawning with certain interval with no kill requirements.'
+            - '&7'
+            - '&cCan not be greater than &4Next Spawn Percent&c value.'
+            - '&7'
+            - '&6Left-Click: &eChange'
+    Slots: 16
+    Type: WAVES_CHANGE_GRADUAL_NEXT_KILL_PERCENT

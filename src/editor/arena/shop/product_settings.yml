@@ -1,0 +1,139 @@
+Title: '&8&l「 &9Arena Shop Product Settings &8&l」'
+Size: 54
+
+Content:
+  return:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&c&lReturn &4✕'
+    Slots: 49
+    Type: RETURN
+
+Editor:
+  lock_triggers:
+    Display:
+      default:
+        Item:
+          material: CLOCK
+          name: '&eProduct Lock Triggers'
+          lore:
+            - '&bProduct will be locked (unavailable)'
+            - '&bfor purchase on the'
+            - '&bfollowing arena events:'
+            - '%shop_product_triggers_locked%'
+            - '&7'
+            - '&dFor more details about the triggers,'
+            - '&dplease visit: &bhttp://nexwiki.info'
+            - '&7'
+            - '&6Left-Click: &eAdd Trigger'
+            - '&6Right-Click: &eRemove All'
+    Slots: 12
+    Type: SHOP_PRODUCT_CHANGE_TRIGGERS_LOCKED
+
+  unlock_triggers:
+    Display:
+      default:
+        Item:
+          material: CLOCK
+          name: '&eProduct Unlock Triggers'
+          lore:
+            - '&bProduct will be unlocked (available)'
+            - '&bfor purchase on the'
+            - '&bfollowing arena events:'
+            - '%shop_product_triggers_unlocked%'
+            - '&7'
+            - '&dFor more details about the triggers,'
+            - '&dplease visit: &bhttp://nexwiki.info'
+            - '&7'
+            - '&6Left-Click: &eAdd Trigger'
+            - '&6Right-Click: &eRemove All'
+    Slots: 14
+    Type: SHOP_PRODUCT_CHANGE_TRIGGERS_UNLOCKED
+
+  price:
+    Display:
+      default:
+        Item:
+          material: GOLD_NUGGET
+          name: '&ePrice'
+          lore:
+            - '&bCurrent: &a%shop_product_price%'
+            - '&7'
+            - '&6Left-Click: &eChange'
+    Slots: 4
+    Type: SHOP_PRODUCT_CHANGE_PRICE
+
+  preview:
+    Display:
+      default:
+        Item:
+          material: ITEM_FRAME
+          name: '&eItem Preview'
+          lore:
+            - '&bCurrent: &a%shop_product_name%'
+            - '&7'
+            - '&7This item will be displayed in the Shop Menu.'
+            - '&aMake sure to prepare item with custom name'
+            - '&aand lore to describe the product content.'
+            - '&7'
+            - '&6Drag & Drop: &eReplace'
+    Slots: 13
+    Type: SHOP_PRODUCT_CHANGE_PREVIEW
+
+  required_kits:
+    Display:
+      default:
+        Item:
+          material: DIAMOND_CHESTPLATE
+          name: '&eRequired Kits'
+          lore:
+            - '&bOnly players with the following kits'
+            - '&bwill be able to purchase this product:'
+            - '%shop_product_applicable_kits%'
+            - '&7'
+            - '&7Leave this list empty'
+            - '&7for no kit requirements.'
+            - '&7'
+            - '&6Left-Click: &eAdd Kit'
+            - '&6Right-Click: &eClear List'
+          item-flags:
+          - '*'
+    Slots: 20
+    Type: SHOP_PRODUCT_CHANGE_REQUIRED_KITS
+
+  product_items:
+    Display:
+      default:
+        Item:
+          material: GOLDEN_HORSE_ARMOR
+          name: '&eItems'
+          lore:
+            - '&bList of items, that will be'
+            - '&bgiven to a player after the purchase.'
+            - '&7'
+            - '&aSimply put/take items in/from the chest'
+            - '&athat will be opened, then use ESC'
+            - '&ato return back to here.'
+            - '&7'
+            - '&6Left-Click: &eNavigate'
+    Slots: 24
+    Type: SHOP_PRODUCT_CHANGE_ITEMS
+
+  product_commands:
+    Display:
+      default:
+        Item:
+          material: COMMAND_BLOCK
+          name: '&eCommands'
+          lore:
+            - '&bThe following commands will'
+            - '&bbe executed after the purchase:'
+            - '%shop_product_commands%'
+            - '&7'
+            - '&6Left-Click: &eAdd Command'
+            - '&6Right-Click: &eClear List'
+    Slots: 31
+    Type: SHOP_PRODUCT_CHANGE_COMMANDS
+

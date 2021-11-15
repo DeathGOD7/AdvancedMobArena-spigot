@@ -1,0 +1,32 @@
+name: AdvancedMobArena
+version: 7.5.7
+main: su.nightexpress.ama.AMA
+author: NightExpress
+depend: [NexEngine]
+softdepend: [Vault, MythicMobs, HolographicDisplays, Citizens, PlaceholderAPI, Multiverse-Core, multiworld, SunLight]
+loadbefore: [Magic]
+description: An advanced mob arena with many cool features for your server!
+api-version: 1.15
+permissions:
+    advancedmobarena.user:
+        description: User access.
+        default: true
+    advancedmobarena.admin:
+        description: Admin access.
+        default: op
+        children:
+            advancedmobarena.user: true
+            advancedmobarena.bypass: true
+    advancedmobarena.bypass:
+        description: Bypass permissions.
+        default: op
+        children:
+            advancedmobarena.bypass.join.ingame: true
+            advancedmobarena.bypass.arena.commands: true
+            advancedmobarena.bypass.kit.cost: true
+    advancedmobarena.kit.*:
+        description: Access to any kit.
+        default: op
+    advancedmobarena.arena.*:
+        description: Access to any arena.
+        default: op

@@ -1,0 +1,78 @@
+Title: '&8&l「 &9Arena Shop Settings &8&l」'
+Size: 54
+
+Content:
+  return:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&c&lReturn &4✕'
+    Slots: 49
+    Type: RETURN
+
+  dummy_gui:
+    Display:
+      default:
+        Item:
+          material: PAINTING
+          name: '&eShop GUI View'
+          lore:
+            - '&cEdit GUI view manually in'
+            - '&cshop config file.'
+            - '&7'
+            - '&bTips and examples are on'
+            - '&bplugin wiki: &ahttp://nexwiki.info'
+    Slots: 33
+    Type: NONE
+
+Editor:
+  products:
+    Display:
+      default:
+        Item:
+          material: EMERALD
+          name: '&eShop Products'
+          lore:
+            - '&bCreate and Edit shop products here.'
+            - '&7'
+            - '&6Left-Click: &eNavigate'
+    Slots: 29
+    Type: SHOP_PRODUCTS
+
+  lock_in_wave:
+    Display:
+      default:
+        Item:
+          material: BLAZE_POWDER
+          name: '&eLock In Wave'
+          lore:
+            - '&bCurrent: &a%lock_while_mobs_alive%'
+            - '&7'
+            - '&7When, enabled, shop will'
+            - '&7be locked while there are'
+            - '&7alive mobs in the arena.'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+    Slots: 11
+    Type: SHOP_CHANGE_LOCK_IN_WAVE
+
+  hide_other_kit_items:
+    Display:
+      default:
+        Item:
+          material: DIAMOND_CHESTPLATE
+          name: '&eHide Other Kit Items'
+          lore:
+            - '&bCurrent: &a%hide_other_kit_products%'
+            - '&7'
+            - '&7When, enabled, shop items'
+            - '&7that are available for certain'
+            - '&7kits only will not be displayed'
+            - '&7for players with other kits.'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+          item-flags:
+          - '*'
+    Slots: 15
+    Type: SHOP_CHANGE_HIDE_OTHER_KIT_ITEMS
