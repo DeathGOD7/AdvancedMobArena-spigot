@@ -1,4 +1,4 @@
-package su.nightexpress.ama.editor.handler;
+package su.nightexpress.ama.editor.handler.kit;
 
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;

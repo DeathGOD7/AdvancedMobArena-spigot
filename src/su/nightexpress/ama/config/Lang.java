@@ -318,6 +318,15 @@ public class Lang extends CoreLang {
 	public ILangMsg Editor_Kit_Enter_Cost    = new ILangMsg(this, "&7Enter &acost&7...");
 	public ILangMsg Editor_Kit_Error_Exist   = new ILangMsg(this, "&cKit already exists!");
 
+	public ILangMsg Editor_Mob_Enter_Create  = new ILangMsg(this, "&7Enter &aunique &7mob &aidentifier&7...");
+	public ILangMsg Editor_Mob_Enter_Name  = new ILangMsg(this, "&7Enter &acustom &7mob &aname&7...");
+	public ILangMsg Editor_Mob_Enter_Type  = new ILangMsg(this, "&7Enter &aentity type&7...");
+	public ILangMsg Editor_Mob_Enter_Level  = new ILangMsg(this, "&7Enter &alevel&7 value...");
+	public ILangMsg Editor_Mob_Enter_BossBar_Title  = new ILangMsg(this, "&7Enter bossbar &atitle&7...");
+	public ILangMsg Editor_Mob_Enter_Attribute  = new ILangMsg(this, "&7Enter &aattribute &7and &avalue&7...");
+	public ILangMsg Editor_Mob_Enter_Slime_Size  = new ILangMsg(this, "&7Enter &aslime size&7...");
+	public ILangMsg Editor_Mob_Error_Exist   = new ILangMsg(this, "&cMob already exists!");
+
 	public ILangMsg Setup_Arena_Lobby_Set = new ILangMsg(this, "&7Defined lobby location for &a%arena_id% &7arena!");
 	public ILangMsg Setup_Arena_Leave_Set = new ILangMsg(this, "&7Defined leave location for &a%arena_id% &7arena!");
 	public ILangMsg Setup_Arena_Leave_UnSet = new ILangMsg(this, "&7Undefined leave location for &a%arena_id% &7arena!");

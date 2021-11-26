@@ -1,5 +1,5 @@
 name: AdvancedMobArena
-version: 7.5.7
+version: 7.5.8
 main: su.nightexpress.ama.AMA
 author: NightExpress
 depend: [NexEngine]

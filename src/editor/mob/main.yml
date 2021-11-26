@@ -1,0 +1,272 @@
+Title: '&8&l「 &9Mob Editor - Mob &8&l」'
+Size: 54
+
+Content:
+  return:
+    Display:
+      default:
+        Item:
+          material: BARRIER
+          name: '&c&lReturn &4✕'
+    Slots: 49
+    Type: RETURN
+
+Editor:
+  name:
+    Display:
+      default:
+        Item:
+          material: NAME_TAG
+          name: '&eMob Name'
+          lore:
+            - '&bCurrent: &a%mob_name%'
+            - '&bVisible: &a%mob_name_visible%'
+            - '&7'
+            - '&6Left-Click: &eChange'
+            - '&6Right-Click: &eChange Visibility'
+    Slots: 4
+    Type: MOB_CHANGE_NAME
+
+  type:
+    Display:
+      default:
+        Item:
+          material: ZOMBIE_SPAWN_EGG
+          name: '&eEntity Type'
+          lore:
+            - '&bCurrent: &a%mob_entity_type%'
+            - '&7'
+            - '&6Left-Click: &eChange'
+    Slots: 11
+    Type: MOB_CHANGE_ENTITY_TYPE
+
+  level:
+    Display:
+      default:
+        Item:
+          material: EXPERIENCE_BOTTLE
+          name: '&eMob Level'
+          lore:
+            - '&bMin. Level: &a%mob_level_min%'
+            - '&bMax. Level: &a%mob_level_max%'
+            - '&7'
+            - '&6Left-Click: &eChange Min'
+            - '&6Right-Click: &eChange Max'
+    Slots: 12
+    Type: MOB_CHANGE_LEVEL
+
+  bossbar:
+    Display:
+      default:
+        Item:
+          material: COMPASS
+          name: '&eMob Boss Bar'
+          lore:
+            - '&bEnabled: &a%mob_bossbar_enabled%'
+            - '&bTitle: &a%mob_bossbar_title%'
+            - '&bColor: &a%mob_bossbar_color%'
+            - '&bStyle: &a%mob_bossbar_style%'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+            - '&6Right-Click: &eChange Title'
+            - '&6Shift-Left: &eChange Color'
+            - '&6Shift-Right: &eChange Style'
+    Slots: 13
+    Type: MOB_CHANGE_BOSSBAR
+
+  attributes:
+    Display:
+      default:
+        Item:
+          material: APPLE
+          name: '&eMob Attrributes'
+          lore:
+            - '&bBase Attributes:'
+            - '&a%mob_attribute_base_name%: &2%mob_attribute_base_value%'
+            - '&7'
+            - '&bPer Level Attributes:'
+            - '&a%mob_attribute_level_name%: &2%mob_attribute_level_value%'
+            - '&7'
+            - '&6Left-Click: &eAdd Base Attribute'
+            - '&6Right-Click: &eAdd Per Level Attribute'
+            - '&6Shift-Left: &eClear Attributes'
+    Slots: 14
+    Type: MOB_CHANGE_ATTRIBUTES
+
+  equipment:
+    Display:
+      default:
+        Item:
+          material: ARMOR_STAND
+          name: '&eMob Equipment'
+          lore:
+            - '&bThese items will be equipped to'
+            - '&bmob equipment slots.'
+            - '&8(Use ESC to Save and Return)'
+            - '&7'
+            - '&cPlease, follow the order:'
+            - '&4Boots &c→ &4Leggings &c→ &4Chestplate &c→ &4Helmet'
+            - '&7'
+            - '&6Left-Click: &eNavigate'
+    Slots: 15
+    Type: MOB_CHANGE_EQUIPMENT
+
+
+  baby:
+    Display:
+      default:
+        Item:
+          material: TURTLE_EGG
+          name: '&eIs Baby'
+          lore:
+            - '&bCurrent: &a%mob_settings_baby%'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+    Slots: 27
+    Type: MOB_CHANGE_SETTINGS_BABY
+
+  horse:
+    Display:
+      default:
+        Item:
+          material: IRON_HORSE_ARMOR
+          name: '&eHorse Settings'
+          lore:
+            - '&bColor: &a%mob_settings_horse_color%'
+            - '&bStyle: &a%mob_settings_horse_style%'
+            - '&7'
+            - '&6Left-Click: &eChange Color'
+            - '&6Right-Click: &eChange Style'
+    Slots: 28
+    Type: MOB_CHANGE_SETTINGS_HORSE
+
+  creeper:
+    Display:
+      default:
+        Item:
+          material: CREEPER_HEAD
+          name: '&eCreeper Settings'
+          lore:
+            - '&bCharged: &a%mob_settings_creeper_charged%'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+    Slots: 29
+    Type: MOB_CHANGE_SETTINGS_CREEPER
+
+  slime:
+    Display:
+      default:
+        Item:
+          material: SLIME_BALL
+          name: '&eSlime Settings'
+          lore:
+            - '&bSize: &a%mob_settings_slime_size%'
+            - '&7'
+            - '&6Left-Click: &eChange'
+    Slots: 30
+    Type: MOB_CHANGE_SETTINGS_SLIME
+
+  parrot:
+    Display:
+      default:
+        Item:
+          material: FEATHER
+          name: '&eParrot Settings'
+          lore:
+            - '&bVariant: &a%mob_settings_parrot_variant%'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+    Slots: 31
+    Type: MOB_CHANGE_SETTINGS_PARROT
+
+  llama:
+    Display:
+      default:
+        Item:
+          material: LIME_DYE
+          name: '&eLlama Settings'
+          lore:
+            - '&bColor: &a%mob_settings_llama_color%'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+    Slots: 32
+    Type: MOB_CHANGE_SETTINGS_LLAMA
+
+  sheep:
+    Display:
+      default:
+        Item:
+          material: WHITE_WOOL
+          name: '&eSheep Settings'
+          lore:
+            - '&bColor: &a%mob_settings_sheep_color%'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+    Slots: 33
+    Type: MOB_CHANGE_SETTINGS_SHEEP
+
+  rabbit:
+    Display:
+      default:
+        Item:
+          material: RABBIT_HIDE
+          name: '&eRabbit Settings'
+          lore:
+            - '&bType: &a%mob_settings_rabbit_type%'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+    Slots: 34
+    Type: MOB_CHANGE_SETTINGS_RABBIT
+
+  cat:
+    Display:
+      default:
+        Item:
+          material: COD
+          name: '&eCat Settings'
+          lore:
+            - '&bType: &a%mob_settings_cat_type%'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+    Slots: 35
+    Type: MOB_CHANGE_SETTINGS_CAT
+
+  mushroom_cow:
+    Display:
+      default:
+        Item:
+          material: RED_MUSHROOM
+          name: '&eMushroom Cow Settings'
+          lore:
+            - '&bVariant: &a%mob_settings_mushroom_cow_variant%'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+    Slots: 39
+    Type: MOB_CHANGE_SETTINGS_MUSHROOM_COW
+
+  wolf:
+    Display:
+      default:
+        Item:
+          material: BONE
+          name: '&eWolf Settings'
+          lore:
+            - '&bAngry: &a%mob_settings_wolf_angry%'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+    Slots: 40
+    Type: MOB_CHANGE_SETTINGS_WOLF
+
+  villager:
+    Display:
+      default:
+        Item:
+          material: ANVIL
+          name: '&eVillager Settings'
+          lore:
+            - '&bProfession: &a%mob_settings_villager_profession%'
+            - '&7'
+            - '&6Left-Click: &eToggle'
+    Slots: 41
+    Type: MOB_CHANGE_SETTINGS_VILLAGER
+

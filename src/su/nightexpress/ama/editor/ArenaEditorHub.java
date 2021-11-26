@@ -10,11 +10,13 @@ import su.nexmedia.engine.api.menu.MenuItemType;
 import su.nightexpress.ama.AMA;
 import su.nightexpress.ama.arena.editor.arena.EditorArenaList;
 import su.nightexpress.ama.kits.editor.EditorKitList;
+import su.nightexpress.ama.mobs.editor.EditorMobList;
 
 public class ArenaEditorHub extends AbstractMenu<AMA> {
 
 	private EditorArenaList arenaEditor;
 	private EditorKitList   kitEditor;
+	private EditorMobList mobEditor;
 	
 	public ArenaEditorHub(@NotNull AMA plugin) {
 		super(plugin, ArenaEditorHandler.YML_HUB, "");
@@ -33,9 +35,7 @@ public class ArenaEditorHub extends AbstractMenu<AMA> {
 				switch (type2) {
 					case EDITOR_ARENA -> this.getArenaEditor().open(player, 1);
 					case EDITOR_KITS -> this.getKitEditor().open(player, 1);
-					case EDITOR_MOBS -> {
-						// TODO
-					}
+					case EDITOR_MOBS -> this.getMobEditor().open(player, 1);
 					default -> {}
 				}
 			}
@@ -75,7 +75,15 @@ public class ArenaEditorHub extends AbstractMenu<AMA> {
 		}
 		return this.kitEditor;
 	}
-	
+
+	@NotNull
+	public EditorMobList getMobEditor() {
+		if (this.mobEditor == null) {
+			this.mobEditor = new EditorMobList(plugin.getMobManager());
+		}
+		return mobEditor;
+	}
+
 	@Override
 	public void clear() {
 		if (this.arenaEditor != null) {

@@ -1,47 +1,46 @@
-display-name: '&fHorse &7[&6Lv. &c%level%&7]'
-name-visible: false
-entity-type: HORSE
-boss: false
-
-level:
-  minimum: 1
-  maximum: 50
-
-settings:
-  baby: false
-  horse:
-    color: 'BROWN'
-    style: 'NONE'
-  creeper:
-    charged: false
-  slime:
-    size: 4
-  parrot:
-    variant: 'BLUE'
-  llama:
-    color: WHITE
-  sheep:
-    color: RED
-  rabbit:
-    type: 'WHITE'
-  cat:
-    type: BLACK_CAT
-  mushroom_cow:
-    variant: RED
-  wolf:
-    angry: false
-  villager:
-    profession: LIBRARIAN
-
-boss-bar:
-  enabled: false
-  title: '&c&l%name% &7&l- &f&l%hp%&7&l/&f&l%maxhp%'
-  style: SOLID
-  color: BLUE
-
-equipment: []
-
-attributes:
-  start: {}
-  per-level:
-    GENERIC_MAX_HEALTH: 0.5
+Name: §fHorse §cLv. §6%mob_level%
+Name_Visible: true
+Entity_Type: HORSE
+Level:
+  Minimum: 1
+  Maximum: 10
+Settings:
+  Is_Baby: false
+  Creeper:
+    Charged: false
+  Wolf:
+    Angry: true
+  Slime:
+    Size: 4
+  Horse:
+    Color: BLACK
+    Style: NONE
+  Parrot:
+    Variant: RED
+  Llama:
+    Color: GRAY
+  Sheep:
+    Color: WHITE
+  Rabbit:
+    Type: GOLD
+  Cat:
+    Type: BLACK
+  Mushroom_Cow:
+    Variant: RED
+  Villager:
+    Profession: NONE
+Equipment:
+- k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+- k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+- k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+- k00010004qb4006mqqbeclhn4ob6egt62qbi0400agrfeln78080
+Boss_Bar:
+  Enabled: false
+  Title: §c§l%mob_name% §7§l- §f§l%mob_health%§7/§f§l%mob_health_max%
+  Style: SOLID
+  Color: RED
+Attributes:
+  Base:
+    GENERIC_MAX_HEALTH: 0.0
+  Per_Level:
+    GENERIC_MAX_HEALTH: 1.0

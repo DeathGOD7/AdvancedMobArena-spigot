@@ -41,7 +41,8 @@ Editor:
       default:
         Item:
           material: CREEPER_SPAWN_EGG
-          name: '&aMobs Manager &7(Soon!)'
-          lore: []
+          name: '&aMobs Manager'
+          lore:
+            - '&6Left-Click: &eOpen'
     Slots: 16
     Type: EDITOR_MOBS

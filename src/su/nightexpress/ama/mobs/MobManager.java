@@ -39,6 +39,13 @@ public class MobManager extends AbstractManager<AMA> {
 		this.mobs = new HashMap<>();
 		this.plugin.getConfigManager().extract("/mobs/");
 
+		/*for (EntityType entityType : EntityType.values()) {
+			if (!entityType.isAlive() || !entityType.isSpawnable()) continue;
+
+			ArenaCustomMob mob = new ArenaCustomMob(plugin, plugin.getDataFolder() + "/mobs/" + entityType.name().toLowerCase() + ".yml", entityType);
+			mob.save();
+		}*/
+
 		for (JYML cfg : JYML.loadAll(plugin.getDataFolder() + "/mobs/", false)) {
 			try {
 				ArenaCustomMob mob = new ArenaCustomMob(plugin, cfg);
@@ -50,7 +57,7 @@ public class MobManager extends AbstractManager<AMA> {
 			}
 		}
 		plugin.info("Mobs Loaded: " + mobs.size());
-		
+
 		this.mythicMobs = plugin.getMythicMobs();
 	}
 	
@@ -63,6 +70,11 @@ public class MobManager extends AbstractManager<AMA> {
 	@NotNull
 	public List<String> getMobIds() {
 		return new ArrayList<>(this.mobs.keySet());
+	}
+
+	@NotNull
+	public Map<String, ArenaCustomMob> getMobsMap() {
+		return this.mobs;
 	}
 
 	@NotNull
@@ -117,7 +129,7 @@ public class MobManager extends AbstractManager<AMA> {
 			customMob.applyAttributes(entity, level);
 			
 			ArenaMobHealthBar healthBar = customMob.getHealthBar();
-			if (healthBar != null) {
+			if (healthBar.isEnabled()) {
 				healthBar.create(arena.getPlayersIngame(), entity);
 			}
 			this.setTemplate(entity, customMob);

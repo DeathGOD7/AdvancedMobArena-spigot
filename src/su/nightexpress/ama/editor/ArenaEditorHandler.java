@@ -25,8 +25,8 @@ import su.nightexpress.ama.arena.region.ArenaRegionManager;
 import su.nightexpress.ama.arena.shop.ArenaShopManager;
 import su.nightexpress.ama.arena.spot.ArenaSpotManager;
 import su.nightexpress.ama.arena.wave.ArenaWaveManager;
-import su.nightexpress.ama.editor.handler.EditorHandlerKit;
-import su.nightexpress.ama.editor.handler.EditorHandlerKitManager;
+import su.nightexpress.ama.editor.handler.kit.EditorHandlerKit;
+import su.nightexpress.ama.editor.handler.kit.EditorHandlerKitManager;
 import su.nightexpress.ama.editor.handler.arena.config.HandlerArenaConfig;
 import su.nightexpress.ama.editor.handler.arena.game.HandlerGameplay;
 import su.nightexpress.ama.editor.handler.arena.game.HandlerGameplayCommand;
@@ -44,7 +44,11 @@ import su.nightexpress.ama.editor.handler.arena.wave.HandlerWave;
 import su.nightexpress.ama.editor.handler.arena.wave.HandlerWaveAmplificator;
 import su.nightexpress.ama.editor.handler.arena.wave.HandlerWaveManager;
 import su.nightexpress.ama.editor.handler.arena.wave.HandlerWaveMob;
+import su.nightexpress.ama.editor.handler.mob.EditorHandlerMob;
+import su.nightexpress.ama.editor.handler.mob.EditorHandlerMobManager;
 import su.nightexpress.ama.kits.KitManager;
+import su.nightexpress.ama.mobs.ArenaCustomMob;
+import su.nightexpress.ama.mobs.MobManager;
 
 public class ArenaEditorHandler extends AbstractEditorHandler<AMA, ArenaEditorType> {
 
@@ -153,6 +157,8 @@ public class ArenaEditorHandler extends AbstractEditorHandler<AMA, ArenaEditorTy
         this.handlers.put(IArenaWaveMob.class, new HandlerWaveMob(plugin));
         this.handlers.put(IArenaKit.class, new EditorHandlerKit(plugin));
         this.handlers.put(KitManager.class, new EditorHandlerKitManager(plugin));
+        this.handlers.put(MobManager.class, new EditorHandlerMobManager(plugin));
+        this.handlers.put(ArenaCustomMob.class, new EditorHandlerMob(plugin));
     }
 
     @Override

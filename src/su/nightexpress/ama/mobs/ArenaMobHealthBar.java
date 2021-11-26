@@ -17,20 +17,35 @@ import java.util.Set;
 
 public class ArenaMobHealthBar {
 
-	private final String   title;
-	private final BarStyle style;
-	private final BarColor color;
+	private boolean isEnabled;
+	private String   title;
+	private BarStyle style;
+	private BarColor color;
 	
 	public ArenaMobHealthBar(
-			@NotNull String title,
-			@NotNull BarStyle style,
-			@NotNull BarColor color
-			) {
-		this.title = StringUT.color(title);
-		this.style = style;
-		this.color = color;
+		boolean isEnabled,
+		@NotNull String title,
+		@NotNull BarStyle style,
+		@NotNull BarColor color
+	) {
+		this.setEnabled(isEnabled);
+		this.setTitle(title);
+		this.setStyle(style);
+		this.setColor(color);
 	}
-	
+
+	public boolean isEnabled() {
+		return isEnabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		isEnabled = enabled;
+	}
+
+	public void setTitle(@NotNull String title) {
+		this.title = StringUT.color(title);
+	}
+
 	@NotNull
 	public String getTitle() {
 		return this.title;
@@ -40,25 +55,33 @@ public class ArenaMobHealthBar {
 	public BarStyle getStyle() {
 		return this.style;
 	}
-	
+
+	public void setStyle(@NotNull BarStyle style) {
+		this.style = style;
+	}
+
 	@NotNull
 	public BarColor getColor() {
 		return this.color;
 	}
-	
+
+	public void setColor(@NotNull BarColor color) {
+		this.color = color;
+	}
+
 	@NotNull
 	private String replaceTitle(@NotNull String str, @NotNull LivingEntity boss) {
 		return str
-				.replace("%hp%", NumberUT.format(boss.getHealth()))
-				.replace("%maxhp%", NumberUT.format(getMaxHealth(boss)))
-				.replace("%name%", boss.getCustomName())
+				.replace(ArenaCustomMob.PLACEHOLDER_HEALTH, NumberUT.format(boss.getHealth()))
+				.replace(ArenaCustomMob.PLACEHOLDER_HEALTH_MAX, NumberUT.format(getMaxHealth(boss)))
+				.replace(ArenaCustomMob.PLACEHOLDER_NAME, boss.getCustomName() != null ? boss.getCustomName() : boss.getName())
 				;
 	}
 	
 	public void create(@NotNull Set<ArenaPlayer> players, @NotNull LivingEntity boss) {
 		String title = this.replaceTitle(this.getTitle(), boss);
 		
-		BossBar bar = Bukkit.getServer().createBossBar(title, this.color, this.style, BarFlag.DARKEN_SKY);
+		BossBar bar = Bukkit.getServer().createBossBar(title, this.getColor(), this.getStyle(), BarFlag.DARKEN_SKY);
 		bar.setProgress(1D);
 		bar.setVisible(true);
 		

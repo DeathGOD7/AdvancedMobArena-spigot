@@ -1,0 +1,46 @@
+Name: §fZombie Heavy §cLv. §6%mob_level%
+Name_Visible: true
+Entity_Type: ZOMBIE
+Level:
+  Minimum: 1
+  Maximum: 10
+Settings:
+  Is_Baby: false
+  Creeper:
+    Charged: false
+  Wolf:
+    Angry: true
+  Slime:
+    Size: 4
+  Horse:
+    Color: BLACK
+    Style: NONE
+  Parrot:
+    Variant: RED
+  Llama:
+    Color: GRAY
+  Sheep:
+    Color: WHITE
+  Rabbit:
+    Type: GOLD
+  Cat:
+    Type: BLACK
+  Mushroom_Cow:
+    Variant: RED
+  Villager:
+    Profession: NONE
+Boss_Bar:
+  Enabled: false
+  Title: §c§l%mob_name% §7§l- §f§l%mob_health%§7/§f§l%mob_health_max%
+  Style: SOLID
+  Color: RED
+Equipment:
+- 1800020009km800kdlkmspb3e9gmct1qd5p6urivc9nmut3j18006t31cs1g01i4c5mm2pr5000000000400agrfeln78080
+- k00010004qb400bmqqbeclhn4ob6egt6isjfdpfmopb7ctkmsprj18006t31cs1g01i4c5mm2pr5000000000400agrfeln78080
+- 1800020009km800pdlkmspb3e9gmct1qd5p6urivcdk6asrke1m62t3518006t31cs1g01i4c5mm2pr5000000000400agrfeln78080
+- a0000g002d5i005bdd5n6aoric5j78ej9e9nmsnr8clm6qpbk18006t31cs1g01i4c5mm2pr5000000000400agrfeln78080
+Attributes:
+  Base:
+    GENERIC_MAX_HEALTH: 30.0
+  Per_Level:
+    GENERIC_MAX_HEALTH: 2.0

@@ -9,25 +9,28 @@ import org.bukkit.entity.*;
 import org.bukkit.inventory.EntityEquipment;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import su.nexmedia.engine.api.manager.AbstractLoadableItem;
+import su.nexmedia.engine.api.manager.ICleanable;
+import su.nexmedia.engine.api.manager.IEditable;
+import su.nexmedia.engine.api.manager.IPlaceholder;
 import su.nexmedia.engine.config.api.JYML;
-import su.nexmedia.engine.manager.LoadableItem;
-import su.nexmedia.engine.utils.CollectionsUT;
 import su.nexmedia.engine.utils.StringUT;
 import su.nightexpress.ama.AMA;
+import su.nightexpress.ama.mobs.editor.EditorMobMain;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.UnaryOperator;
 
-public class ArenaCustomMob extends LoadableItem {
+public class ArenaCustomMob extends AbstractLoadableItem<AMA> implements IPlaceholder, IEditable, ICleanable {
 
-    private String name;
-    private boolean visible;
-    private EntityType type;
+    private String     name;
+    private boolean    nameVisible;
+    private EntityType entityType;
     
-    private int lvlMin;
-    private int lvlMax;
+    private int levelMin;
+    private int levelMax;
     
     private boolean     isBaby;
     private Horse.Color horseColor;
@@ -43,32 +46,101 @@ public class ArenaCustomMob extends LoadableItem {
     private boolean wolfAngry;
     private Villager.Profession villagerProfession;
     
-    private ArenaMobHealthBar bossBar;
-    private       ItemStack[]              equip;
+    private final ArenaMobHealthBar        bossBar;
+    private       ItemStack[]              equipment;
     private final Map<Attribute, double[]> attributes; // [0] Base, [1] Per Level
     
-    //protected EditorMobMob editor;
-    
-    // Creating new config
+    private EditorMobMain editor;
+
+	public static final String PLACEHOLDER_ID = "%mob_id%";
+	public static final String PLACEHOLDER_NAME = "%mob_name%";
+	public static final String PLACEHOLDER_HEALTH = "%mob_health%";
+	public static final String PLACEHOLDER_HEALTH_MAX = "%mob_health_max%";
+	public static final String PLACEHOLDER_NAME_VISIBLE = "%mob_name_visible%";
+	public static final String PLACEHOLDER_ENTITY_TYPE = "%mob_entity_type%";
+	public static final String PLACEHOLDER_LEVEL = "%mob_level%";
+	public static final String PLACEHOLDER_LEVEL_MIN = "%mob_level_min%";
+	public static final String PLACEHOLDER_LEVEL_MAX = "%mob_level_max%";
+	public static final String PLACEHOLDER_BOSSBAR_ENABLED = "%mob_bossbar_enabled%";
+	public static final String PLACEHOLDER_BOSSBAR_TITLE = "%mob_bossbar_title%";
+	public static final String PLACEHOLDER_BOSSBAR_COLOR = "%mob_bossbar_color%";
+	public static final String PLACEHOLDER_BOSSBAR_STYLE = "%mob_bossbar_style%";
+	public static final String PLACEHOLDER_ATTRIBUTE_BASE_NAME = "%mob_attribute_base_name%";
+	public static final String PLACEHOLDER_ATTRIBUTE_BASE_VALUE = "%mob_attribute_base_value%";
+	public static final String PLACEHOLDER_ATTRIBUTE_LEVEL_NAME = "%mob_attribute_level_name%";
+	public static final String PLACEHOLDER_ATTRIBUTE_LEVEL_VALUE = "%mob_attribute_level_value%";
+	public static final String PLACEHOLDER_SETTINGS_BABY = "%mob_settings_baby%";
+	public static final String PLACEHOLDER_SETTINGS_HORSE_COLOR = "%mob_settings_horse_color%";
+	public static final String PLACEHOLDER_SETTINGS_HORSE_STYLE = "%mob_settings_horse_style%";
+	public static final String PLACEHOLDER_SETTINGS_CREEPER_CHARGED = "%mob_settings_creeper_charged%";
+	public static final String PLACEHOLDER_SETTINGS_SLIME_SIZE = "%mob_settings_slime_size%";
+	public static final String PLACEHOLDER_SETTINGS_PARROT_VARIANT = "%mob_settings_parrot_variant%";
+	public static final String PLACEHOLDER_SETTINGS_LLAMA_COLOR = "%mob_settings_llama_color%";
+	public static final String PLACEHOLDER_SETTINGS_SHEEP_COLOR = "%mob_settings_sheep_color%";
+	public static final String PLACEHOLDER_SETTINGS_RABBIT_TYPE = "%mob_settings_rabbit_type%";
+	public static final String PLACEHOLDER_SETTINGS_CAT_TYPE = "%mob_settings_cat_type%";
+	public static final String PLACEHOLDER_SETTINGS_MUSHROOM_COW_VARIANT = "%mob_settings_mushroom_cow_variant%";
+	public static final String PLACEHOLDER_SETTINGS_WOLF_ANGRY = "%mob_settings_wolf_angry%";
+	public static final String PLACEHOLDER_SETTINGS_VILLAGER_PROFESSION = "%mob_settings_villager_profession%";
+
+	@Override
+	@NotNull
+	public UnaryOperator<String> replacePlaceholders() {
+		return str -> str
+			.replace(PLACEHOLDER_ID, this.getId())
+			.replace(PLACEHOLDER_NAME, this.getName())
+			.replace(PLACEHOLDER_NAME_VISIBLE, plugin.lang().getBool(this.isNameVisible()))
+			.replace(PLACEHOLDER_ENTITY_TYPE, plugin.lang().getEnum(this.getEntityType()))
+			.replace(PLACEHOLDER_LEVEL_MIN, String.valueOf(this.getLevelMin()))
+			.replace(PLACEHOLDER_LEVEL_MAX, String.valueOf(this.getLevelMax()))
+			.replace(PLACEHOLDER_BOSSBAR_ENABLED, plugin.lang().getBool(this.getHealthBar().isEnabled()))
+			.replace(PLACEHOLDER_BOSSBAR_TITLE, this.getHealthBar().getTitle())
+			.replace(PLACEHOLDER_BOSSBAR_COLOR, this.getHealthBar().getColor().name())
+			.replace(PLACEHOLDER_BOSSBAR_STYLE, this.getHealthBar().getStyle().name())
+			.replace(PLACEHOLDER_SETTINGS_BABY, plugin.lang().getBool(this.isBaby))
+			.replace(PLACEHOLDER_SETTINGS_HORSE_COLOR, this.horseColor.name())
+			.replace(PLACEHOLDER_SETTINGS_HORSE_STYLE, this.horseStyle.name())
+			.replace(PLACEHOLDER_SETTINGS_CREEPER_CHARGED, plugin.lang().getBool(this.creeperCharged))
+			.replace(PLACEHOLDER_SETTINGS_SLIME_SIZE, String.valueOf(this.slimeSize))
+			.replace(PLACEHOLDER_SETTINGS_PARROT_VARIANT, this.parrotVariant.name())
+			.replace(PLACEHOLDER_SETTINGS_LLAMA_COLOR, this.llamaColor.name())
+			.replace(PLACEHOLDER_SETTINGS_SHEEP_COLOR, this.sheepColor.name())
+			.replace(PLACEHOLDER_SETTINGS_RABBIT_TYPE, this.rabbitType.name())
+			.replace(PLACEHOLDER_SETTINGS_CAT_TYPE, this.catType.name())
+			.replace(PLACEHOLDER_SETTINGS_MUSHROOM_COW_VARIANT, this.mushroomVariant.name())
+			.replace(PLACEHOLDER_SETTINGS_WOLF_ANGRY, plugin.lang().getBool(this.wolfAngry))
+			.replace(PLACEHOLDER_SETTINGS_VILLAGER_PROFESSION, this.villagerProfession.name())
+			;
+	}
+
+	// Creating new config
     public ArenaCustomMob(@NotNull AMA plugin, @NotNull String path) {
     	super(plugin, path);
-    	
-    	this.setName("&aNew Custom Mob");
-		this.setNameVisible(true);
+
 		this.setEntityType(EntityType.ZOMBIE);
-		
-		this.lvlMin = 1;
-		this.lvlMax = 10;
-		
-		this.isBaby = false;
-		this.creeperCharged = false;
-		this.wolfAngry = false;
-		this.slimeSize = 4;
-		
+    	this.setName("&f" + StringUT.capitalizeFully(getEntityType().name().toLowerCase().replace("_", " ")) + " &cLv. &6" + PLACEHOLDER_LEVEL);
+		this.setNameVisible(true);
 		this.setEquipment(new ItemStack[4]);
+
+		this.setLevelMin(1);
+		this.setLevelMax(10);
+
+		this.setBaby(false);
+		this.setHorseColor(Horse.Color.BLACK);
+		this.setHorseStyle(Horse.Style.NONE);
+		this.setCreeperCharged(false);
+		this.setSlimeSize(4);
+		this.setParrotVariant(Parrot.Variant.RED);
+		this.setLlamaColor(Llama.Color.GRAY);
+		this.setSheepColor(DyeColor.WHITE);
+		this.setRabbitType(Rabbit.Type.GOLD);
+		this.setCatType(Cat.Type.BLACK);
+		this.setMushroomVariant(MushroomCow.Variant.RED);
+		this.setVillagerProfession(Villager.Profession.NONE);
+		this.setWolfAngry(true);
 		
-		String barTitle = "&c&l%name% &7&l- &f&l%hp%&7/&f&l%maxhp%";
-		this.bossBar = new ArenaMobHealthBar(barTitle, BarStyle.SOLID, BarColor.RED);
+		String barTitle = "&c&l" + PLACEHOLDER_NAME + " &7&l- &f&l" + PLACEHOLDER_HEALTH + "&7/&f&l" + PLACEHOLDER_HEALTH_MAX;
+		this.bossBar = new ArenaMobHealthBar(false, barTitle, BarStyle.SOLID, BarColor.RED);
 		
 		this.attributes = new HashMap<>();
 		this.attributes.put(Attribute.GENERIC_MAX_HEALTH, new double[] {20D, 1D});
@@ -77,104 +149,113 @@ public class ArenaCustomMob extends LoadableItem {
     public ArenaCustomMob(@NotNull AMA plugin, @NotNull JYML cfg) {
     	super(plugin, cfg);
 
-		this.setName(cfg.getString("display-name", this.getId()));
-		this.setNameVisible(cfg.getBoolean("name-visible"));
-		EntityType type = CollectionsUT.getEnum(cfg.getString("entity-type", ""), EntityType.class);
+		this.setName(cfg.getString("Name", this.getId()));
+		this.setNameVisible(cfg.getBoolean("Name_Visible"));
+		EntityType type = cfg.getEnum("Entity_Type", EntityType.class);
 		if (type == null) {
 			throw new IllegalStateException("Invalid entity type for '" + getId() + "' mob!");
 		}
 		this.setEntityType(type);
-		
-		this.lvlMin = cfg.getInt("level.minimum", 1);
-		this.lvlMax = cfg.getInt("level.maximum", 1);
-		
-		this.isBaby = cfg.getBoolean(path + "settings.baby");
-		
-		String path = "settings." + type.name().toLowerCase() + ".";
-		switch (type) {
-			case HORSE -> {
-				this.horseColor = cfg.getEnum(path + "color", Horse.Color.class);
-				this.horseStyle = cfg.getEnum(path + "style", Horse.Style.class);
-			}
-			case CREEPER -> this.creeperCharged = cfg.getBoolean(path + "charged");
-			case SLIME -> this.slimeSize = cfg.getInt(path + "size", 4);
-			case PARROT -> this.parrotVariant = cfg.getEnum(path + "variant", Parrot.Variant.class);
-			case LLAMA -> this.llamaColor = cfg.getEnum(path + "color", Llama.Color.class);
-			case SHEEP -> this.sheepColor = cfg.getEnum(path + "color", DyeColor.class);
-			case RABBIT -> this.rabbitType = cfg.getEnum(path + "type", Rabbit.Type.class);
-			case CAT -> this.catType = cfg.getEnum(path + "type", Cat.Type.class);
-			case MUSHROOM_COW -> this.mushroomVariant = cfg.getEnum(path + "variant", MushroomCow.Variant.class);
-			case VILLAGER -> this.villagerProfession = cfg.getEnum(path + "profession", Villager.Profession.class);
-			case WOLF -> this.wolfAngry = cfg.getBoolean(path + "angry");
-			default -> {}
-		}
-		
-		this.setEquipment(cfg.getItemList64("equipment"));
+		this.setEquipment(cfg.getItemList64("Equipment"));
+
+		this.setLevelMin(cfg.getInt("Level.Minimum", 1));
+		this.setLevelMax(cfg.getInt("Level.Maximum", 1));
+
+		String path = "Settings.";
+		this.setBaby(cfg.getBoolean(path + "Is_Baby"));
+		this.setHorseColor(cfg.getEnum(path + "Horse.Color", Horse.Color.class, Horse.Color.BLACK));
+		this.setHorseStyle(cfg.getEnum(path + "Horse.Style", Horse.Style.class, Horse.Style.NONE));
+		this.setCreeperCharged(cfg.getBoolean(path + "Creeper.Charged"));
+		this.setSlimeSize(cfg.getInt(path + "Slime.Size", 4));
+		this.setParrotVariant(cfg.getEnum(path + "Parrot.Variant", Parrot.Variant.class, Parrot.Variant.RED));
+		this.setLlamaColor(cfg.getEnum(path + "Llama.Color", Llama.Color.class, Llama.Color.GRAY));
+		this.setSheepColor(cfg.getEnum(path + "Sheep.Color", DyeColor.class, DyeColor.WHITE));
+		this.setRabbitType(cfg.getEnum(path + "Rabbit.Type", Rabbit.Type.class, Rabbit.Type.GOLD));
+		this.setCatType(cfg.getEnum(path + "Cat.Type", Cat.Type.class, Cat.Type.BLACK));
+		this.setMushroomVariant(cfg.getEnum(path + "Mushroom_Cow.Variant", MushroomCow.Variant.class, MushroomCow.Variant.RED));
+		this.setVillagerProfession(cfg.getEnum(path + "Villager.Profession", Villager.Profession.class, Villager.Profession.NONE));
+		this.setWolfAngry(cfg.getBoolean(path + "Wolf.Angry"));
 		
 		// Boss Bar
-		if (cfg.getBoolean("boss-bar.enabled")) {
-			String barTitle = cfg.getString("boss-bar.title", "&c&l%name% &7&l- &f&l%hp%&7&l/&f&l%maxhp%");
-			BarColor barColor = cfg.getEnum("boss-bar.color", BarColor.class, BarColor.RED);
-			BarStyle barStyle = cfg.getEnum("boss-bar.style", BarStyle.class, BarStyle.SOLID);
-			this.bossBar = new ArenaMobHealthBar(barTitle, barStyle, barColor);
-		}
+		path = "Boss_Bar.";
+		boolean barEnabled = cfg.getBoolean(path + "Enabled");
+		String barTitle = cfg.getString(path + "Title", PLACEHOLDER_NAME);
+		BarColor barColor = cfg.getEnum(path + "Color", BarColor.class, BarColor.RED);
+		BarStyle barStyle = cfg.getEnum(path + "Style", BarStyle.class, BarStyle.SOLID);
+		this.bossBar = new ArenaMobHealthBar(barEnabled, barTitle, barStyle, barColor);
 		
 		// Attributes
+		path = "Attributes.";
 		this.attributes = new HashMap<>();
-		for (Attribute att : Attribute.values()) {
-			double value = cfg.getDouble("attributes.start." + att.name());
-			double perLevel = cfg.getDouble("attributes.per-level." + att.name());
-			if (value > 0 || perLevel > 0) {
-				this.attributes.put(att, new double[] {value, perLevel});
+		for (Attribute attribute : Attribute.values()) {
+			double valueBase = cfg.getDouble(path + "Base." + attribute.name());
+			double valueLevel = cfg.getDouble(path + "Per_Level." + attribute.name());
+			if (valueBase > 0 || valueLevel > 0) {
+				this.attributes.put(attribute, new double[] {valueBase, valueLevel});
 			}
 		}
     }
     
     @Override
-    protected void save(@NotNull JYML cfg) {
-		cfg.set("display-name", this.getName());
-		cfg.set("name-visible", this.isNameVisible());
-		cfg.set("entity-type", this.getEntityType().name());
+	public void onSave() {
+		cfg.set("Name", this.getName());
+		cfg.set("Name_Visible", this.isNameVisible());
+		cfg.set("Entity_Type", this.getEntityType().name());
 		
-		cfg.set("level.minimum", this.getLevelMin());
-		cfg.set("level.maximum", this.getLevelMax());
+		cfg.set("Level.Minimum", this.getLevelMin());
+		cfg.set("Level.Maximum", this.getLevelMax());
+
+		String path = "Settings.";
+		cfg.set(path + "Is_Baby", this.isBaby());
+		cfg.set(path + "Creeper.Charged", this.isCreeperCharged());
+		cfg.set(path + "Wolf.Angry", this.isWolfAngry());
+		cfg.set(path + "Slime.Size", this.getSlimeSize());
+		cfg.set(path + "Horse.Color", this.getHorseColor().name());
+		cfg.set(path + "Horse.Style", this.getHorseStyle().name());
+		cfg.set(path + "Parrot.Variant", this.getParrotVariant().name());
+		cfg.set(path + "Llama.Color", this.getLlamaColor().name());
+		cfg.set(path + "Sheep.Color", this.getSheepColor().name());
+		cfg.set(path + "Rabbit.Type", this.getRabbitType().name());
+		cfg.set(path + "Cat.Type", this.getCatType().name());
+		cfg.set(path + "Mushroom_Cow.Variant", this.getMushroomVariant().name());
+		cfg.set(path + "Villager.Profession", this.getVillagerProfession().name());
 		
-		cfg.set("settings.baby", this.isBaby);
-		cfg.set("settings.creeper.charged", this.creeperCharged);
-		cfg.set("settings.wolf.angry", this.wolfAngry);
-		cfg.set("settings.slime.size", this.slimeSize);
-		
-		String path = "settings." + this.getEntityType().name().toLowerCase() + ".";
-		if (this.horseColor != null) cfg.set(path + "color", this.horseColor.name());
-		if (this.horseStyle != null) cfg.set(path + "style", this.horseStyle.name());
-		if (this.parrotVariant != null) cfg.set(path + "variant", this.parrotVariant.name());
-		if (this.llamaColor != null) cfg.set(path + "color", this.llamaColor.name());
-		if (this.sheepColor != null) cfg.set(path + "color", this.sheepColor.name());
-		if (this.rabbitType != null) cfg.set(path + "type", this.rabbitType.name());
-		if (this.catType != null) cfg.set(path + "type", this.catType.name());
-		if (this.mushroomVariant != null) cfg.set(path + "variant", this.mushroomVariant.name());
-		if (this.villagerProfession != null) cfg.set(path + "profession", this.villagerProfession.name());
-		
-		cfg.set("equipment", null);
-		cfg.setItemList64("equipment", Arrays.asList(this.getEquipment()));
-		
-    	cfg.set("boss-bar.enabled", this.hasHealthBar());
+		cfg.set("Equipment", null);
+		cfg.setItemList64("Equipment", Arrays.asList(this.getEquipment()));
+
+		path = "Boss_Bar.";
     	ArenaMobHealthBar bar = this.getHealthBar();
-    	if (bar != null) {
-			cfg.set("boss-bar.title", bar.getTitle());
-			cfg.set("boss-bar.style", bar.getStyle().name());
-			cfg.set("boss-bar.color", bar.getColor().name());
-    	}
+		cfg.set(path + "Enabled", bar.isEnabled());
+    	cfg.set(path + "Title", bar.getTitle());
+    	cfg.set(path + "Style", bar.getStyle().name());
+    	cfg.set(path + "Color", bar.getColor().name());
 		
-		cfg.set("attributes", null);
+		cfg.set("Attributes", null);
 		this.getAttributes().forEach((att, values) -> {
 			String name = att.name();
-			cfg.set("attributes.start." + name, values[0]);
-			cfg.set("attributes.per-level", values[1]);
+			cfg.set("Attributes.Base." + name, values[0]);
+			cfg.set("Attributes.Per_Level." + name, values[1]);
 		});
     }
-    
-    @NotNull
+
+	@NotNull
+	@Override
+	public EditorMobMain getEditor() {
+		if (this.editor == null) {
+			this.editor = new EditorMobMain(this);
+		}
+		return editor;
+	}
+
+	@Override
+	public void clear() {
+		if (this.editor != null) {
+			this.editor.clear();
+			this.editor = null;
+		}
+	}
+
+	@NotNull
     public String getName() {
     	return this.name;
     }
@@ -184,37 +265,45 @@ public class ArenaCustomMob extends LoadableItem {
     }
     
     public boolean isNameVisible() {
-    	return this.visible;
+    	return this.nameVisible;
     }
     
     public void setNameVisible(boolean visible) {
-    	this.visible = visible;
+    	this.nameVisible = visible;
     }
     
     @NotNull
     public EntityType getEntityType() {
-    	return this.type;
+    	return this.entityType;
     }
     
     public void setEntityType(@NotNull EntityType type) {
-    	this.type = type;
+    	this.entityType = type;
     }
     
     public int getLevelMin() {
-    	return this.lvlMin;
+    	return this.levelMin;
     }
-    
-    public int getLevelMax() {
-    	return this.lvlMax;
+
+	public void setLevelMin(int levelMin) {
+		this.levelMin = levelMin;
+	}
+
+	public int getLevelMax() {
+    	return this.levelMax;
     }
-    
-    @NotNull
+
+	public void setLevelMax(int levelMax) {
+		this.levelMax = levelMax;
+	}
+
+	@NotNull
     public ItemStack[] getEquipment() {
-    	return this.equip;
+    	return this.equipment;
     }
     
     public void setEquipment(@NotNull ItemStack[] equip) {
-    	this.equip = equip;
+    	this.equipment = equip;
     }
     
     /**
@@ -224,101 +313,176 @@ public class ArenaCustomMob extends LoadableItem {
     public Map<Attribute, double[]> getAttributes() {
     	return this.attributes;
     }
-    
-    /*@NotNull
-    public EditorMobMob getEditor() {
-    	if (this.editor == null) {
-    		this.editor = new EditorMobMob((AMA) plugin, this);
-    	}
-    	return this.editor;
-    }*/
-    
-    public void clear() {
-    	/*if (this.editor != null) {
-    		this.editor.shutdown();
-    		this.editor = null;
-    	}*/
-    }
-    
-	public boolean hasHealthBar() {
-    	return this.bossBar != null;
-    }
-    
-	@Nullable
+
+	public boolean isBaby() {
+		return isBaby;
+	}
+
+	public void setBaby(boolean baby) {
+		isBaby = baby;
+	}
+
+	@NotNull
+	public Horse.Color getHorseColor() {
+		return horseColor;
+	}
+
+	public void setHorseColor(@NotNull Horse.Color horseColor) {
+		this.horseColor = horseColor;
+	}
+
+	@NotNull
+	public Horse.Style getHorseStyle() {
+		return horseStyle;
+	}
+
+	public void setHorseStyle(@NotNull Horse.Style horseStyle) {
+		this.horseStyle = horseStyle;
+	}
+
+	public boolean isCreeperCharged() {
+		return creeperCharged;
+	}
+
+	public void setCreeperCharged(boolean creeperCharged) {
+		this.creeperCharged = creeperCharged;
+	}
+
+	public int getSlimeSize() {
+		return slimeSize;
+	}
+
+	public void setSlimeSize(int slimeSize) {
+		this.slimeSize = slimeSize;
+	}
+
+	@NotNull
+	public Parrot.Variant getParrotVariant() {
+		return parrotVariant;
+	}
+
+	public void setParrotVariant(@NotNull Parrot.Variant parrotVariant) {
+		this.parrotVariant = parrotVariant;
+	}
+
+	@NotNull
+	public Llama.Color getLlamaColor() {
+		return llamaColor;
+	}
+
+	public void setLlamaColor(@NotNull Llama.Color llamaColor) {
+		this.llamaColor = llamaColor;
+	}
+
+	@NotNull
+	public DyeColor getSheepColor() {
+		return sheepColor;
+	}
+
+	public void setSheepColor(@NotNull DyeColor sheepColor) {
+		this.sheepColor = sheepColor;
+	}
+
+	@NotNull
+	public Rabbit.Type getRabbitType() {
+		return rabbitType;
+	}
+
+	public void setRabbitType(@NotNull Rabbit.Type rabbitType) {
+		this.rabbitType = rabbitType;
+	}
+
+	@NotNull
+	public Cat.Type getCatType() {
+		return catType;
+	}
+
+	public void setCatType(@NotNull Cat.Type catType) {
+		this.catType = catType;
+	}
+
+	@NotNull
+	public MushroomCow.Variant getMushroomVariant() {
+		return mushroomVariant;
+	}
+
+	public void setMushroomVariant(@NotNull MushroomCow.Variant mushroomVariant) {
+		this.mushroomVariant = mushroomVariant;
+	}
+
+	public boolean isWolfAngry() {
+		return wolfAngry;
+	}
+
+	public void setWolfAngry(boolean wolfAngry) {
+		this.wolfAngry = wolfAngry;
+	}
+
+	@NotNull
+	public Villager.Profession getVillagerProfession() {
+		return villagerProfession;
+	}
+
+	public void setVillagerProfession(@NotNull Villager.Profession villagerProfession) {
+		this.villagerProfession = villagerProfession;
+	}
+
+	@NotNull
     public ArenaMobHealthBar getHealthBar() {
     	return this.bossBar;
     }
 	
 	public void applySettings(@NotNull LivingEntity entity, int level) {
-		entity.setCustomName(this.getName().replace("%level%", String.valueOf(level)));
+		entity.setCustomName(this.getName().replace(PLACEHOLDER_LEVEL, String.valueOf(level)));
 		entity.setCustomNameVisible(this.isNameVisible());
 
 		EntityEquipment armor = entity.getEquipment();
 		if (armor != null) armor.setArmorContents(this.getEquipment());
 
 		if (entity instanceof Ageable age) {
-			if (this.isBaby) age.setBaby();
+			if (this.isBaby()) age.setBaby();
 			else age.setAdult();
 		}
 
 		if (entity instanceof Horse horse) {
-			if (this.horseColor != null && this.horseStyle != null) {
-				horse.setStyle(this.horseStyle);
-				horse.setColor(this.horseColor);
-			}
+			horse.setStyle(this.getHorseStyle());
+			horse.setColor(this.getHorseColor());
 		}
 		else if (entity instanceof Creeper creeper) {
-			creeper.setPowered(this.creeperCharged);
+			creeper.setPowered(this.isCreeperCharged());
 		}
 		else if (entity instanceof Slime slime) {
-			slime.setSize(this.slimeSize);
+			slime.setSize(this.getSlimeSize());
 		}
 		else if (entity instanceof Parrot parrot) {
-			if (this.parrotVariant != null) {
-				parrot.setVariant(this.parrotVariant);
-			}
+			parrot.setVariant(this.getParrotVariant());
 		}
 		else if (entity instanceof Llama llama) {
-			if (this.llamaColor != null) {
-				llama.setColor(this.llamaColor);
-			}
+			llama.setColor(this.getLlamaColor());
 		}
 		else if (entity instanceof Sheep sheep) {
-			if (this.sheepColor != null) {
-				sheep.setColor(this.sheepColor);
-			}
+			sheep.setColor(this.getSheepColor());
 		}
 		else if (entity instanceof Rabbit rabbit) {
-			if (this.rabbitType != null) {
-				rabbit.setRabbitType(this.rabbitType);
-			}
+			rabbit.setRabbitType(this.getRabbitType());
 		}
 		else if (entity instanceof Cat cat) {
-			if (this.catType != null) {
-				cat.setCatType(this.catType);
-			}
+			cat.setCatType(this.getCatType());
 		}
 		else if (entity instanceof MushroomCow mushroomCow) {
-			if (this.mushroomVariant != null) {
-				mushroomCow.setVariant(this.mushroomVariant);
-			}
+			mushroomCow.setVariant(this.getMushroomVariant());
 		}
 		else if (entity instanceof Villager villager) {
-			if (this.villagerProfession != null) {
-				villager.setProfession(this.villagerProfession);
-			}
+			villager.setProfession(this.getVillagerProfession());
 		}
 		else if (entity instanceof Wolf wolf) {
-			wolf.setAngry(this.wolfAngry);
+			wolf.setAngry(this.isWolfAngry());
 		}
 		else if (entity instanceof Zombie zombie) {
-			if (this.isBaby) zombie.setBaby();
+			if (this.isBaby()) zombie.setBaby();
 			
-			if (zombie instanceof ZombieVillager) {
-				if (this.villagerProfession != null) {
-					ZombieVillager zombieVillager = (ZombieVillager) zombie;
-					zombieVillager.setVillagerProfession(this.villagerProfession);
-				}
+			if (zombie instanceof ZombieVillager zombieVillager) {
+				zombieVillager.setVillagerProfession(this.getVillagerProfession());
 			}
 			else if (zombie instanceof PigZombie pigZombie) {
 				pigZombie.setAngry(true);
@@ -326,11 +490,11 @@ public class ArenaCustomMob extends LoadableItem {
 		}
 	}
 
-	public void applyAttributes(@NotNull LivingEntity entity, int lvl) {
-		final int lvl2 = Math.min(this.lvlMax, Math.max(this.lvlMin, lvl)) - 1; // -1 to fine value
+	public void applyAttributes(@NotNull LivingEntity entity, int level) {
+		final int lvl2 = Math.min(this.getLevelMax(), Math.max(this.getLevelMin(), level)) - 1; // -1 to fine value
 		
-		this.getAttributes().forEach((att, values) -> {
-			AttributeInstance aInstance = entity.getAttribute(att);
+		this.getAttributes().forEach((attribute, values) -> {
+			AttributeInstance aInstance = entity.getAttribute(attribute);
 			if (aInstance == null) return;
 			
 			// Fix for cases where default value is not present
@@ -340,7 +504,7 @@ public class ArenaCustomMob extends LoadableItem {
 			double value = values[0] + (values[1] * lvl2);
 			aInstance.setBaseValue(value);
 			
-			if (att == Attribute.GENERIC_MAX_HEALTH) {
+			if (attribute == Attribute.GENERIC_MAX_HEALTH) {
 				entity.setHealth(value);
 			}
 		});
